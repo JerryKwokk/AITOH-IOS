@@ -12,6 +12,7 @@
 		2F2C3BE623E089CC0025A390 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F2C3BE423E089CC0025A390 /* Login.storyboard */; };
 		2F2C3BE823E089CD0025A390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2C3BE723E089CD0025A390 /* Assets.xcassets */; };
 		2F2C3BF323E08FFA0025A390 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2C3BF223E08FFA0025A390 /* LoginViewController.swift */; };
+		2FB2E48D23F9814400E15A81 /* SignUpVIewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E48C23F9814400E15A81 /* SignUpVIewControllerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2F2C3BE723E089CD0025A390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F2C3BEC23E089CD0025A390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F2C3BF223E08FFA0025A390 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2FB2E48C23F9814400E15A81 /* SignUpVIewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVIewControllerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				2F2C3BDE23E089CC0025A390 /* AppDelegate.swift */,
 				2F2C3BE023E089CC0025A390 /* SceneDelegate.swift */,
 				2F2C3BF223E08FFA0025A390 /* LoginViewController.swift */,
+				2FB2E48C23F9814400E15A81 /* SignUpVIewControllerViewController.swift */,
 				2F2C3BE423E089CC0025A390 /* Login.storyboard */,
 				2F2C3BE723E089CD0025A390 /* Assets.xcassets */,
 				2F2C3BEC23E089CD0025A390 /* Info.plist */,
@@ -137,6 +140,7 @@
 				2F2C3BF323E08FFA0025A390 /* LoginViewController.swift in Sources */,
 				2F2C3BDF23E089CC0025A390 /* AppDelegate.swift in Sources */,
 				2F2C3BE123E089CC0025A390 /* SceneDelegate.swift in Sources */,
+				2FB2E48D23F9814400E15A81 /* SignUpVIewControllerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,6 +44,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var viewForgetPanel: UIView!
     @IBOutlet weak var txtForget: UITextField!
     @IBOutlet weak var btnBack: UIButton!
+    @IBOutlet weak var btnSendVerifyCode: UIButton!
+    @IBOutlet weak var lblVerifyCodeMess: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUi()
@@ -58,8 +60,7 @@ class LoginViewController: UIViewController {
     }
     
     func loadUi(){
-        
-        
+        animateBackgrounfColor()
         btnLogin.backgroundColor = .clear
         btnLogin.layer.cornerRadius = 5
         btnLogin.layer.borderWidth = 1
@@ -68,10 +69,8 @@ class LoginViewController: UIViewController {
         btnBack.layer.cornerRadius = 5
         btnBack.layer.borderWidth = 1
         btnBack.layer.borderColor = UIColor.black.cgColor
-        
-        
-        
-        
+        btnSendVerifyCode.layer.cornerRadius = 5
+        lblVerifyCodeMess.isHidden = true
         txtForget.borderStyle = UITextField.BorderStyle.roundedRect
         let leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 0))
         txtForget.leftView = leftView
@@ -81,14 +80,27 @@ class LoginViewController: UIViewController {
         txtLoginPassword.addLine(position: .LINE_POSITION_BOTTOM, color: .darkGray, width: 0.5)
         
         
-        animateBackgrounfColor()
-        
     }
     @IBAction func btnSignUpClick(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.1, delay: 0, options: [.curveLinear], animations:{
-            let x = self.viewLoginPanel.frame.width
-        self.viewLoginPanel.transform = CGAffineTransform(translationX: x, y: 0)})
-        
-        
+        performSegue(withIdentifier: "toSignUp", sender: self)
     }
+    
+    @IBAction func btnBackClick(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveLinear], animations:{
+        self.viewLoginPanel.transform = CGAffineTransform(translationX: 0, y: 0)})
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveLinear], animations:{
+            let x = -(self.viewForgetPanel.frame.width+7)
+        self.viewForgetPanel.transform = CGAffineTransform(translationX: x, y: 0)})
+    }
+    
+    @IBAction func btnForgetClick(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveLinear], animations:{
+                   let x = self.viewLoginPanel.frame.width
+               self.viewLoginPanel.transform = CGAffineTransform(translationX: x, y: 0)})
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveLinear], animations:{
+                   let x = self.viewForgetPanel.frame.width+6
+               self.viewForgetPanel.transform = CGAffineTransform(translationX: x, y: 0)})
+    }
+    
 }
+

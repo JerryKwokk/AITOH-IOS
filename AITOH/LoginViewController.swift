@@ -46,6 +46,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var btnSendVerifyCode: UIButton!
     @IBOutlet weak var lblVerifyCodeMess: UILabel!
+    @IBOutlet weak var lblErrorMess: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUi()
@@ -75,10 +76,9 @@ class LoginViewController: UIViewController {
         let leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 0))
         txtForget.leftView = leftView
         txtForget.leftViewMode = .always
-        
         txtLoginUsername.addLine(position: .LINE_POSITION_BOTTOM, color: .darkGray, width: 0.5)
         txtLoginPassword.addLine(position: .LINE_POSITION_BOTTOM, color: .darkGray, width: 0.5)
-        
+        lblErrorMess.isHidden = true
         
     }
     @IBAction func btnSignUpClick(_ sender: UIButton) {
@@ -100,6 +100,12 @@ class LoginViewController: UIViewController {
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveLinear], animations:{
                    let x = self.viewForgetPanel.frame.width+6
                self.viewForgetPanel.transform = CGAffineTransform(translationX: x, y: 0)})
+    }
+    @IBAction func btnLoginClick(_ sender: UIButton) {
+        if(txtLoginUsername.text == "kevin.api" && txtLoginPassword.text == "happy1234"){
+            
+        }
+        
     }
     
 }

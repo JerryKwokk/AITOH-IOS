@@ -105,6 +105,8 @@ class LoginViewController: UIViewController {
         if(txtLoginUsername.text == "kevin.api" && txtLoginPassword.text == "happy1234"){
             UserDefaults.standard.set(txtLoginUsername.text, forKey: "username")
             UserDefaults.standard.set("1047", forKey: "userId")
+            print(UserDefaults.standard.value(forKey: "username") ?? "test")
+            print(UserDefaults.standard.value(forKey: "userId") ?? "test")
             // save the presenting ViewController
 
                         //傳至下一頁面

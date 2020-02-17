@@ -103,7 +103,23 @@ class LoginViewController: UIViewController {
     }
     @IBAction func btnLoginClick(_ sender: UIButton) {
         if(txtLoginUsername.text == "kevin.api" && txtLoginPassword.text == "happy1234"){
+            UserDefaults.standard.set(txtLoginUsername.text, forKey: "username")
+            UserDefaults.standard.set("1047", forKey: "userId")
+            // save the presenting ViewController
+
+                        //傳至下一頁面
+            let viewController:UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "TabViewController")
+            viewController.modalPresentationStyle = .fullScreen
+            let transition = CATransition()
+            transition.duration = 0.3
+            transition.type = CATransitionType.push
+            transition.subtype = CATransitionSubtype.fromRight
+            transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.linear)
+            view.window!.layer.add(transition, forKey: kCATransition)
             
+            self.present(viewController, animated: false, completion: nil)
+            // 返回 self.dismissViewControllerAnimated(true, completion: nil)
+
         }else{
             lblErrorMess.isHidden = false
         }

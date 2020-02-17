@@ -104,6 +104,8 @@ class LoginViewController: UIViewController {
     @IBAction func btnLoginClick(_ sender: UIButton) {
         if(txtLoginUsername.text == "kevin.api" && txtLoginPassword.text == "happy1234"){
             
+        }else{
+            lblErrorMess.isHidden = false
         }
         
     }

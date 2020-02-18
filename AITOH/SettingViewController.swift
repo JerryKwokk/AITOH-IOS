@@ -1,20 +1,21 @@
 //
-//  NewStoryViewController.swift
+//  SettingViewController.swift
 //  AITOH
 //
-//  Created by Jerry Kwok on 17/2/2020.
+//  Created by Jerry Kwok on 18/2/2020.
 //  Copyright © 2020 AITOH. All rights reserved.
 //
 
 import UIKit
 
-class NewStoryViewController: UIViewController {
+class SettingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.frame.size.height = 200
         // Do any additional setup after loading the view.
     }
+    
 
     /*
     // MARK: - Navigation

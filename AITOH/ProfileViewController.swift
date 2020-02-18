@@ -16,7 +16,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var descrip: UITextView!
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var iconImage: UIImageView!
+    @IBOutlet weak var btnEditProfile: UIButton!
     
+    @IBOutlet weak var profilePostCollection: UICollectionViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +31,20 @@ class ProfileViewController: UIViewController {
         follower.setTitle("346", for: .normal)
         following.setTitle("18", for: .normal)
         iconImage.layer.cornerRadius = iconImage.frame.size.width / 2
-        iconImage.clipsToBounds = true
+        btnEditProfile.format()
+        iconImage.round()
         bgImage.layer.cornerRadius = 20
-        iconImage.layer.borderWidth = 10
-        iconImage.layer.borderColor = UIColor.white.cgColor
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     /*

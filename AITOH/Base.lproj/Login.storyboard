@@ -629,6 +629,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="UA4-Nu-9tp" kind="show" id="Y2V-N7-EQk"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="vsJ-14-CCy">
                                         <rect key="frame" x="0.0" y="119" width="414" height="70"/>
@@ -654,6 +657,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="SuV-Zd-ye5" kind="show" id="kmi-ki-K3b"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="Go8-n9-Sr0">
                                         <rect key="frame" x="0.0" y="189" width="414" height="70"/>
@@ -721,6 +727,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bim-pN-sdr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-846" y="4282"/>
+        </scene>
+        <!--Account Privacy-->
+        <scene sceneID="IGQ-lh-6Ss">
+            <objects>
+                <viewController id="UA4-Nu-9tp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ott-6u-PSz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Private Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC6-7G-yFb">
+                                <rect key="frame" x="20" y="72" width="137" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U1-h2-YxE">
+                                <rect key="frame" x="20" y="97" width="312" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">When your Account is private, only people you approve is able to see your photos and vides on Instagram. Your existing followers won't be affected.</string>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z8e-bG-I1E">
+                                <rect key="frame" x="341" y="72" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="onTintColor" red="0.21960784310000001" green="0.59215686270000001" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="settingSwittch:" destination="xJS-Jh-ilL" eventType="valueChanged" id="Npt-7j-4En"/>
+                                    <action selector="swittchPrivacyChange:" destination="xJS-Jh-ilL" eventType="valueChanged" id="xM1-8u-9gM"/>
+                                </connections>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="jEA-JR-J1X"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Account Privacy" id="fsf-dU-c3M"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yN8-37-1Rf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="xJS-Jh-ilL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-1555.072463768116" y="5079.6195652173919"/>
+        </scene>
+        <!--Touch ID-->
+        <scene sceneID="wEu-Lw-LXm">
+            <objects>
+                <viewController id="SuV-Zd-ye5" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sAn-UO-y8v">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SAg-CO-aem"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Touch ID" id="Ew2-nv-NZK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FfF-Kx-IIQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-793" y="5081"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KHs-jQ-51t">
@@ -965,4 +1031,5 @@
         <image name="topLoginActivity" width="1242" height="92"/>
         <image name="topReport" width="1242" height="92"/>
     </resources>
+    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
 </document>

@@ -23,6 +23,7 @@
 		2FB2E49E23FBAB5800E15A81 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E49D23FBAB5800E15A81 /* UIButton.swift */; };
 		2FB2E4A023FBC5E800E15A81 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E49F23FBC5E800E15A81 /* SettingViewController.swift */; };
 		2FB2E4A223FBD1AF00E15A81 /* SettingDetialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E4A123FBD1AF00E15A81 /* SettingDetialViewController.swift */; };
+		2FB2E4A623FC42D700E15A81 /* SettingAccountPrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E4A523FC42D700E15A81 /* SettingAccountPrivacyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		2FB2E49D23FBAB5800E15A81 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		2FB2E49F23FBC5E800E15A81 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2FB2E4A123FBD1AF00E15A81 /* SettingDetialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetialViewController.swift; sourceTree = "<group>"; };
+		2FB2E4A523FC42D700E15A81 /* SettingAccountPrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAccountPrivacyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				2F2C3BE023E089CC0025A390 /* SceneDelegate.swift */,
 				2F2C3BF223E08FFA0025A390 /* LoginViewController.swift */,
 				2FB2E48C23F9814400E15A81 /* SignUpVIewControllerViewController.swift */,
+				2FB2E4A523FC42D700E15A81 /* SettingAccountPrivacyViewController.swift */,
 				2F2C3BE423E089CC0025A390 /* Login.storyboard */,
 				2F2C3BE723E089CD0025A390 /* Assets.xcassets */,
 				2F2C3BEC23E089CD0025A390 /* Info.plist */,
@@ -178,6 +181,7 @@
 				2F2C3BF323E08FFA0025A390 /* LoginViewController.swift in Sources */,
 				2F2C3BDF23E089CC0025A390 /* AppDelegate.swift in Sources */,
 				2FB2E4A223FBD1AF00E15A81 /* SettingDetialViewController.swift in Sources */,
+				2FB2E4A623FC42D700E15A81 /* SettingAccountPrivacyViewController.swift in Sources */,
 				2F2C3BE123E089CC0025A390 /* SceneDelegate.swift in Sources */,
 				2FB2E4A023FBC5E800E15A81 /* SettingViewController.swift in Sources */,
 				2FB2E49923FACF4000E15A81 /* NewStoryViewController.swift in Sources */,

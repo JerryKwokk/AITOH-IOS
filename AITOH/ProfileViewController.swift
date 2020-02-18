@@ -35,6 +35,7 @@ class ProfileViewController: UIViewController {
         iconImage.round()
         bgImage.layer.cornerRadius = 20
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

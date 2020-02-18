@@ -16,6 +16,12 @@ class SettingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Something Else"
+        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+    }
+    
 
     /*
     // MARK: - Navigation
@@ -25,6 +31,8 @@ class SettingViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
+     
+     
     */
 
 }

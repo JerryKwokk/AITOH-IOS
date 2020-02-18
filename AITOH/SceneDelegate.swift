@@ -30,12 +30,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        if UserDefaults.standard.value(forKey: "username") == nil || UserDefaults.standard.value(forKey: "userId") == nil {
            let loginVC: LoginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
            self.window?.rootViewController = loginVC
-        print("false")
        } else {
            let homeVC: TabViewController = storyboard.instantiateViewController(withIdentifier: "TabViewController") as! TabViewController
            let navigationHomeVC = UINavigationController(rootViewController: homeVC)
            self.window?.rootViewController = navigationHomeVC
-        print("home")
        }
         self.window?.makeKeyAndVisible()
     }

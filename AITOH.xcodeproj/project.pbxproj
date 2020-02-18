@@ -14,6 +14,13 @@
 		2F2C3BF323E08FFA0025A390 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2C3BF223E08FFA0025A390 /* LoginViewController.swift */; };
 		2FB2E48D23F9814400E15A81 /* SignUpVIewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E48C23F9814400E15A81 /* SignUpVIewControllerViewController.swift */; };
 		2FB2E48F23FA79CE00E15A81 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E48E23FA79CE00E15A81 /* TabViewController.swift */; };
+		2FB2E49123FACED500E15A81 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E49023FACED500E15A81 /* HomeViewController.swift */; };
+		2FB2E49323FACEED00E15A81 /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E49223FACEED00E15A81 /* ArchiveViewController.swift */; };
+		2FB2E49523FACF0100E15A81 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E49423FACF0100E15A81 /* ActivityViewController.swift */; };
+		2FB2E49723FACF0F00E15A81 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E49623FACF0F00E15A81 /* ProfileViewController.swift */; };
+		2FB2E49923FACF4000E15A81 /* NewStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E49823FACF4000E15A81 /* NewStoryViewController.swift */; };
+		2FB2E49C23FBA9DE00E15A81 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E49B23FBA9DE00E15A81 /* UIImageView.swift */; };
+		2FB2E49E23FBAB5800E15A81 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E49D23FBAB5800E15A81 /* UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		2F2C3BF223E08FFA0025A390 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2FB2E48C23F9814400E15A81 /* SignUpVIewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVIewControllerViewController.swift; sourceTree = "<group>"; };
 		2FB2E48E23FA79CE00E15A81 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		2FB2E49023FACED500E15A81 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2FB2E49223FACEED00E15A81 /* ArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
+		2FB2E49423FACF0100E15A81 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		2FB2E49623FACF0F00E15A81 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2FB2E49823FACF4000E15A81 /* NewStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStoryViewController.swift; sourceTree = "<group>"; };
+		2FB2E49B23FBA9DE00E15A81 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		2FB2E49D23FBAB5800E15A81 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,12 @@
 			children = (
 				2F2C3BDE23E089CC0025A390 /* AppDelegate.swift */,
 				2FB2E48E23FA79CE00E15A81 /* TabViewController.swift */,
+				2FB2E49023FACED500E15A81 /* HomeViewController.swift */,
+				2FB2E49223FACEED00E15A81 /* ArchiveViewController.swift */,
+				2FB2E49823FACF4000E15A81 /* NewStoryViewController.swift */,
+				2FB2E49423FACF0100E15A81 /* ActivityViewController.swift */,
+				2FB2E49A23FBA96C00E15A81 /* UIVIew */,
+				2FB2E49623FACF0F00E15A81 /* ProfileViewController.swift */,
 				2F2C3BE023E089CC0025A390 /* SceneDelegate.swift */,
 				2F2C3BF223E08FFA0025A390 /* LoginViewController.swift */,
 				2FB2E48C23F9814400E15A81 /* SignUpVIewControllerViewController.swift */,
@@ -68,6 +88,15 @@
 				2F2C3BEC23E089CD0025A390 /* Info.plist */,
 			);
 			path = AITOH;
+			sourceTree = "<group>";
+		};
+		2FB2E49A23FBA96C00E15A81 /* UIVIew */ = {
+			isa = PBXGroup;
+			children = (
+				2FB2E49B23FBA9DE00E15A81 /* UIImageView.swift */,
+				2FB2E49D23FBAB5800E15A81 /* UIButton.swift */,
+			);
+			path = UIVIew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +172,15 @@
 				2F2C3BF323E08FFA0025A390 /* LoginViewController.swift in Sources */,
 				2F2C3BDF23E089CC0025A390 /* AppDelegate.swift in Sources */,
 				2F2C3BE123E089CC0025A390 /* SceneDelegate.swift in Sources */,
+				2FB2E49923FACF4000E15A81 /* NewStoryViewController.swift in Sources */,
+				2FB2E49523FACF0100E15A81 /* ActivityViewController.swift in Sources */,
 				2FB2E48F23FA79CE00E15A81 /* TabViewController.swift in Sources */,
+				2FB2E49C23FBA9DE00E15A81 /* UIImageView.swift in Sources */,
 				2FB2E48D23F9814400E15A81 /* SignUpVIewControllerViewController.swift in Sources */,
+				2FB2E49723FACF0F00E15A81 /* ProfileViewController.swift in Sources */,
+				2FB2E49123FACED500E15A81 /* HomeViewController.swift in Sources */,
+				2FB2E49323FACEED00E15A81 /* ArchiveViewController.swift in Sources */,
+				2FB2E49E23FBAB5800E15A81 /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

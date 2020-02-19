@@ -60,6 +60,11 @@ class LoginViewController: UIViewController {
             self.gradientView.transform = CGAffineTransform(translationX: x, y: 0)})
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        super.viewWillDisappear(animated)
+    } 
+    
     func loadUi(){
         animateBackgrounfColor()
         btnLogin.backgroundColor = .clear

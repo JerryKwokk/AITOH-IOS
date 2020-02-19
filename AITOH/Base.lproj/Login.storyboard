@@ -222,7 +222,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="baseline_more_vert_white_24dp"/>
                                                     <connections>
-                                                        <action selector="btnMoreClick:" destination="Thb-dY-2xI" eventType="touchUpInside" id="NjT-2n-sgp"/>
+                                                        <action selector="btnEditClick:" destination="Thb-dY-2xI" eventType="touchUpInside" id="Gvi-Br-jf3"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -270,16 +270,17 @@
             </objects>
             <point key="canvasLocation" x="3221.739130434783" y="1109.5108695652175"/>
         </scene>
-        <!--View Controller-->
+        <!--Album Detail View Controller-->
         <scene sceneID="zAb-CY-knp">
             <objects>
-                <viewController id="mec-Rf-ajs" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlbumDetailViewController" id="mec-Rf-ajs" customClass="AlbumDetailViewController" customModule="AITOH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sd0-z4-DX6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="8Ao-V9-x3o"/>
                     </view>
+                    <navigationItem key="navigationItem" id="mbR-fx-BC0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXl-gJ-2C1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -830,7 +831,7 @@
                                 <rect key="frame" x="20" y="394" width="374" height="105"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>

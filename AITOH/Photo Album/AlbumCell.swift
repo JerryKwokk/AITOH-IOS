@@ -17,10 +17,14 @@ class AlbumCell: UITableViewCell {
         bgImage.image = album.bgImage
         title.text = album.title
         subtitle.text = String(album.count) + " items, updated " + String(album.create_date)
+    }
+    
+    @IBAction func btnEditClick(_ sender: UIButton) {
         
     }
     
-    @IBAction func btnMoreClick(_ sender: UIButton) {
-    }
+    
+    
+    
     
 }

@@ -19,7 +19,6 @@ class SettingAccountPrivacyViewController: UIViewController {
     
     @IBAction func swittchPrivacyChange(_ sender: UISwitch) {
     }
-    
     /*
     // MARK: - Navigation
 

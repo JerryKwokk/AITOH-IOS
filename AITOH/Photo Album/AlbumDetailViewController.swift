@@ -10,13 +10,50 @@ import UIKit
 
 class AlbumDetailViewController: UIViewController {
     var album:Album!
+    @IBOutlet weak var mainPhoto: UIImageView!
+    @IBOutlet weak var subtitle: UILabel!
+    @IBOutlet weak var photoTitle: UILabel!
+    @IBOutlet weak var collect: UICollectionView!
+    
+    var photos: [AlbumPhoto] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(album.create_date)
+        photos = createArray()
+        loadUI()
         // Do any additional setup after loading the view.
     }
     
+    func loadUI(){
+        mainPhoto.image = album.bgImage
+        photoTitle.text = album.title
+        subtitle.text = String(album.count) + " items, update " + album.create_date
+        let rightBarButton = UIBarButtonItem(image: UIImage(named: "baseline_landscape_black_18dp-1"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(AlbumDetailViewController.mapModeClick))
+        self.navigationItem.rightBarButtonItem = rightBarButton
 
+        
+        
+    }
+    
+    @objc func mapModeClick(_ sender:UIBarButtonItem!)
+    {
+         let vc = storyboard?.instantiateViewController(identifier: "MapModeViewController") as? MapModeViewController
+         self.navigationController?.pushViewController(vc!, animated: true)
+    }
+
+    
+    
+    func createArray() -> [AlbumPhoto]{
+        let photo1 = AlbumPhoto(id: "1", imagePath: "null", image: UIImage(named: "photo1.png")!, create_date: "12-01-2020")
+        let photo2 = AlbumPhoto(id: "1", imagePath: "null", image: UIImage(named: "photo2.png")!, create_date: "12-01-2020")
+        let photo3 = AlbumPhoto(id: "1", imagePath: "null", image: UIImage(named: "photo3.png")!, create_date: "12-01-2020")
+        let photo4 = AlbumPhoto(id: "1", imagePath: "null", image: UIImage(named: "photo4.png")!, create_date: "12-01-2020")
+        let photo5 = AlbumPhoto(id: "1", imagePath: "null", image: UIImage(named: "photo5.png")!, create_date: "12-01-2020")
+        let photo6 = AlbumPhoto(id: "1", imagePath: "null", image: UIImage(named: "photo6.png")!, create_date: "12-01-2020")
+        let photo7 = AlbumPhoto(id: "1", imagePath: "null", image: UIImage(named: "photo7.png")!, create_date: "12-01-2020")
+        let photo8 = AlbumPhoto(id: "1", imagePath: "null", image: UIImage(named: "photo8.png")!, create_date: "12-01-2020")
+        let photo9 = AlbumPhoto(id: "1", imagePath: "null", image: UIImage(named: "photo10.png")!, create_date: "12-01-2020")
+        return [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9]
+    }
     /*
     // MARK: - Navigation
 
@@ -27,4 +64,41 @@ class AlbumDetailViewController: UIViewController {
     }
     */
 
+}
+
+extension AlbumDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+         print("setArray")
+        let photo = photos[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
+        cell.setAlbumPhoto(albumPhoto: photo)
+        
+        return cell
+    }
+    
+}
+
+extension AlbumDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 135, height: 135)
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
+    }
+    
 }

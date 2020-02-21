@@ -12,6 +12,8 @@ struct AlbumPhoto {
     var imagePath: String
     var image: UIImage
     var create_date:String
+    
+    
     init(id: String, imagePath: String, image: UIImage, create_date: String) {
         self.id = id
         self.imagePath = imagePath

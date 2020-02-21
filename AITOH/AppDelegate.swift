@@ -14,11 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        checkLogged()
         // Override point for customization after application launch.
         return true
     }
     
-   /* func checkLogged(){
+    func checkLogged(){
         print("App")
         print(UserDefaults.standard.value(forKey: "username") ?? "test")
         print(UserDefaults.standard.value(forKey: "userId") ?? "test")
@@ -31,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = navViewController
             self.window?.makeKeyAndVisible()
         }
-    }*/
+    }
 
     // MARK: UISceneSession Lifecycle
 

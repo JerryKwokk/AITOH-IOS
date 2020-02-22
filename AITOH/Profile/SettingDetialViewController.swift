@@ -44,6 +44,9 @@ class SettingDetialViewController: UITableViewController {
         //self.dismiss(animated: true, completion: nil)
         
     }
+    @IBAction func btnCloseClick(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
 

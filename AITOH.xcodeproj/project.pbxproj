@@ -131,7 +131,6 @@
 		2FB2E4BC23FD310C00E15A81 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E4BB23FD310C00E15A81 /* Album.swift */; };
 		2FB2E4C623FD685600E15A81 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E4C523FD685600E15A81 /* AlbumDetailViewController.swift */; };
 		2FB2E4C823FD68CD00E15A81 /* AlbumPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E4C723FD68CD00E15A81 /* AlbumPhoto.swift */; };
-		2FE6E91824012BC500294B51 /* SettingLoginActivityTableCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91724012BC500294B51 /* SettingLoginActivityTableCellTableViewCell.swift */; };
 		2FE6E91A24012CDE00294B51 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91924012CDE00294B51 /* Device.swift */; };
 		2FE6E91C24013B3B00294B51 /* StoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */; };
 		2FE6E91E24013D3500294B51 /* StoryLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */; };
@@ -140,6 +139,8 @@
 		2FE6E9242401402C00294B51 /* PrivacyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E9232401402C00294B51 /* PrivacyCell.swift */; };
 		2FE6E9262401413500294B51 /* Privacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E9252401413500294B51 /* Privacy.swift */; };
 		2FE6E92824015FB700294B51 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E92724015FB700294B51 /* LocationViewController.swift */; };
+		2FE6E92A24018AF600294B51 /* SettingLoginActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E92924018AF600294B51 /* SettingLoginActivityCell.swift */; };
+		2FE6E92C2401A26800294B51 /* SettingReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E92B2401A26800294B51 /* SettingReportViewController.swift */; };
 		431057B66CC58B71EA70F948 /* Pods_AITOH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C4183F20AC9BA94F499806 /* Pods_AITOH.framework */; };
 /* End PBXBuildFile section */
 
@@ -288,7 +289,6 @@
 		2FB2E4BB23FD310C00E15A81 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		2FB2E4C523FD685600E15A81 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		2FB2E4C723FD68CD00E15A81 /* AlbumPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhoto.swift; sourceTree = "<group>"; };
-		2FE6E91724012BC500294B51 /* SettingLoginActivityTableCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLoginActivityTableCellTableViewCell.swift; sourceTree = "<group>"; };
 		2FE6E91924012CDE00294B51 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryMainCell.swift; sourceTree = "<group>"; };
 		2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryLocationCell.swift; sourceTree = "<group>"; };
@@ -297,6 +297,8 @@
 		2FE6E9232401402C00294B51 /* PrivacyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyCell.swift; sourceTree = "<group>"; };
 		2FE6E9252401413500294B51 /* Privacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Privacy.swift; sourceTree = "<group>"; };
 		2FE6E92724015FB700294B51 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		2FE6E92924018AF600294B51 /* SettingLoginActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLoginActivityCell.swift; sourceTree = "<group>"; };
+		2FE6E92B2401A26800294B51 /* SettingReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingReportViewController.swift; sourceTree = "<group>"; };
 		70C4183F20AC9BA94F499806 /* Pods_AITOH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AITOH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF85F495871E61719FE39EE /* Pods-AITOH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AITOH.release.xcconfig"; path = "Target Support Files/Pods-AITOH/Pods-AITOH.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -641,11 +643,12 @@
 				2FB2E49F23FBC5E800E15A81 /* SettingViewController.swift */,
 				2FB2E49623FACF0F00E15A81 /* ProfileViewController.swift */,
 				2FB2E4A123FBD1AF00E15A81 /* SettingDetialViewController.swift */,
+				2FE6E92B2401A26800294B51 /* SettingReportViewController.swift */,
 				2FADB18424001C9E007D29E5 /* FollowerTableViewController.swift */,
 				2FB2E4A523FC42D700E15A81 /* SettingAccountPrivacyViewController.swift */,
 				2FADB18624001CD1007D29E5 /* FollowerTableViewCell.swift */,
 				2FADB18C240115C6007D29E5 /* SettingActivityTableViewController.swift */,
-				2FE6E91724012BC500294B51 /* SettingLoginActivityTableCellTableViewCell.swift */,
+				2FE6E92924018AF600294B51 /* SettingLoginActivityCell.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -903,6 +906,7 @@
 				2FADB16523FFA92F007D29E5 /* AVPlayer+Extensions.swift in Sources */,
 				2FB2E49523FACF0100E15A81 /* ActivityViewController.swift in Sources */,
 				2FADB15923FFA92F007D29E5 /* YPCameraView.swift in Sources */,
+				2FE6E92A24018AF600294B51 /* SettingLoginActivityCell.swift in Sources */,
 				2FB2E48F23FA79CE00E15A81 /* TabViewController.swift in Sources */,
 				2FB2E4C823FD68CD00E15A81 /* AlbumPhoto.swift in Sources */,
 				2FE6E92824015FB700294B51 /* LocationViewController.swift in Sources */,
@@ -914,7 +918,6 @@
 				2FADB13923FFA92F007D29E5 /* YPMediaItem.swift in Sources */,
 				2FADB13323FFA92F007D29E5 /* YPWordings.swift in Sources */,
 				2FB2E49C23FBA9DE00E15A81 /* UIImageView.swift in Sources */,
-				2FE6E91824012BC500294B51 /* SettingLoginActivityTableCellTableViewCell.swift in Sources */,
 				2FADB13E23FFA92F007D29E5 /* YPSelectionsGalleryView.swift in Sources */,
 				2FADB14223FFA92F007D29E5 /* YPLibraryVC+CollectionView.swift in Sources */,
 				2FADB17023FFA92F007D29E5 /* AVCaptureSession+Extensions.swift in Sources */,
@@ -957,6 +960,7 @@
 				2FADB14123FFA92F007D29E5 /* YPVideoCaptureVC.swift in Sources */,
 				2FADB16A23FFA92F007D29E5 /* NSFileManager+Extensions.swift in Sources */,
 				2FADB14C23FFA92F007D29E5 /* YPMenuItem.swift in Sources */,
+				2FE6E92C2401A26800294B51 /* SettingReportViewController.swift in Sources */,
 				2FADB16D23FFA92F007D29E5 /* PHFetchResult+Extensions.swift in Sources */,
 				2FADB18124001B46007D29E5 /* User.swift in Sources */,
 				2FB2E49123FACED500E15A81 /* HomeViewController.swift in Sources */,

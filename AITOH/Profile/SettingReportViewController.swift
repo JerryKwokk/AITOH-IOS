@@ -1,28 +1,19 @@
 //
-//  SettingViewController.swift
+//  SettingReportViewController.swift
 //  AITOH
 //
-//  Created by Jerry Kwok on 18/2/2020.
+//  Created by Jerry Kwok on 23/2/2020.
 //  Copyright © 2020 AITOH. All rights reserved.
 //
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingReportViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.frame.size.height = 200
+
         // Do any additional setup after loading the view.
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let backItem = UIBarButtonItem()
-        backItem.title = "Something Else"
-        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
-    }
-    @IBAction func btnCancelClick(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
     }
     
 
@@ -34,8 +25,6 @@ class SettingViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-     
-     
     */
 
 }

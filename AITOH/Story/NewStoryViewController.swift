@@ -7,14 +7,46 @@
 //
 
 import UIKit
+import YPImagePicker
 
 class NewStoryViewController: UIViewController {
-
+    var config = YPImagePickerConfiguration()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let vc = storyboard!.instantiateViewController(identifier: "StoryReviewViewController") as? StoryReviewViewController
+        config.isScrollToChangeModesEnabled = true
+        config.onlySquareImagesFromCamera = false
+        config.usesFrontCamera = true
+        config.showsPhotoFilters = false
+        config.showsVideoTrimmer = true
+        config.shouldSaveNewPicturesToAlbum = true
+        config.albumName = "DefaultYPImagePickerAlbumName"
+        config.startOnScreen = YPPickerScreen.photo
+        config.screens = [.library, .photo, .video]
+        config.showsCrop = .none
+        config.targetImageSize = YPImageSize.original
+        config.overlayView = UIView()
+        config.hidesStatusBar = true
+        config.hidesBottomBar = false
+        config.preferredStatusBarStyle = UIStatusBarStyle.darkContent
+        config.maxCameraZoomFactor = 1.0
+        let picker = YPImagePicker(configuration: config)
+        picker.didFinishPicking { [unowned picker] items, _ in
+            if let photo = items.singlePhoto {
+             //   print(photo.image)
+                
+                vc?.photo = photo.image
+                self.navigationController?.pushViewController(vc!, animated: true)
+            }
+            
+            
+            picker.dismiss(animated: true, completion: nil)
+        }
+        present(picker, animated: true, completion: nil)
         // Do any additional setup after loading the view.
     }
+    
 
     /*
     // MARK: - Navigation

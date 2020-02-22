@@ -8,11 +8,10 @@
 
 import UIKit
 
-class SettingLoginActivityTableCellTableViewCell: UITableViewCell {
+class SettingLoginActivityTableCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
-    var delegate: LoginActivityCellDelegate?
     func setDevice(device: Device){
         title.text = device.location
         let modelName = UIDevice.modelName
@@ -39,9 +38,4 @@ class SettingLoginActivityTableCellTableViewCell: UITableViewCell {
         self.present(actionSheet, animated: true, completion: nil)
     */}
     
-}
-
-protocol LoginActivityCellDelegate {
-    func didTapWatchLater(title: String)
-    func didTapWatchNow(url: String)
 }

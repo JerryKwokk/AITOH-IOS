@@ -17,9 +17,16 @@ class ProfileStoryCell: UITableViewCell {
     @IBOutlet weak var img: UIImageView!
     
     func setup(story: Story){
+        icon.round()
+        icon.layer.borderWidth = 3
         self.icon.image = story.icon
         self.username.text = story.username
-        subtitile.text = story.time + " in " + story.location
+        if(story.location == ""){
+            subtitile.text = story.time
+            
+        }else{
+            subtitile.text = story.time + " in " + story.location
+        }
         desc.text = story.desc
         img.image = story.img
     }

@@ -31,13 +31,17 @@ class TouchIDViewController: UIViewController {
     var inputCode = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadUI()
+        logging()
         // Do any additional setup after loading the view.
     }
     func loadUI(){
-        btnOne.layer.cornerRadius = btnOne.frame.size.width/2
+        btnOne.layer.cornerRadius = 0.5 * btnOne.bounds.size.width
+        btnOne.clipsToBounds = true
         btnOne.layer.borderColor = UIColor.black.cgColor
-        btnOne.layer.borderWidth = 3
+        btnOne.layer.borderWidth = 2
+        
         btnTwo.layer.cornerRadius = btnOne.frame.size.width/2
         btnTwo.layer.borderColor = UIColor.black.cgColor
         btnTwo.layer.borderWidth = 3
@@ -185,6 +189,7 @@ class TouchIDViewController: UIViewController {
         
         self.present(viewController, animated: false, completion: nil)
     }
+    
     
     func showMessage(title: String?, message: String?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

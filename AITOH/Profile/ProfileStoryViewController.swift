@@ -12,14 +12,17 @@ class ProfileStoryViewController: UIViewController {
 
     var storys:[Story] = []
     var selectPhoto:UIImage!
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        storys = createArray()
+        tableView.alwaysBounceVertical = false;
+        tableView.separatorStyle = .none
         // Do any additional setup after loading the view.
     }
     
     func createArray() -> [Story]{
-        let story = Story(id: "1", username: "kevin.api", icon: UIImage(named: "profileIconImage.png")!, iconPath: "null", desc: "123", time: "10 seconds after", location: "Tseung Kwan O, Hong Kong", img: selectPhoto, imgPath: "null")
+        let story = Story(id: "1", username: "kevin.api", icon: UIImage(named: "profileIconImage.png")!, iconPath: "null", desc: "123", time: "10 seconds after", location: "Tseung Kwan O, Hong Kong", img: UIImage(named: "profileIconImage.png")!, imgPath: "null")
         
         return [story]
     }
@@ -53,7 +56,7 @@ extension ProfileStoryViewController: UITableViewDataSource, UITableViewDelegate
         return cell
     }
 
-    /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 65.0
-    }*/
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
+    }
 }

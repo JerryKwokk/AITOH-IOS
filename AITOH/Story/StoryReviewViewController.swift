@@ -23,6 +23,12 @@ class StoryReviewViewController: UIViewController{
      //   selectPhoto.image = photo
         // Do any additional setup after loading the view.
     }
+    @IBAction func btnShareClick(_ sender: UIBarButtonItem) {
+        let vc = storyboard!.instantiateViewController(identifier: "ProfileViewController") as? ProfileViewController
+        //vc?.photo = photo.image
+        self.navigationController?.pushViewController(vc!, animated: true)
+        self.dismiss(animated: true, completion: nil)
+    }
     
    
    

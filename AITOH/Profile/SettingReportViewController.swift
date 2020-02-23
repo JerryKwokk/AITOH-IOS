@@ -10,12 +10,30 @@ import UIKit
 
 class SettingReportViewController: UIViewController {
 
+    @IBOutlet weak var viewMon: UIView!
+    @IBOutlet weak var viewTue: UIView!
+    @IBOutlet weak var viewWed: UIView!
+    @IBOutlet weak var viewThu: UIView!
+    @IBOutlet weak var viewFir: UIView!
+    @IBOutlet weak var viewSat: UIView!
+    @IBOutlet weak var viewSun: UIView!
+    @IBOutlet weak var avgTime: UITextView!
+    @IBOutlet weak var emjJoy: UIView!
+    @IBOutlet weak var emjUn: UIView!
+    @IBOutlet weak var desc: UITextView!
+    @IBOutlet weak var botMes: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    func loadUI(){
+        botMes.text = "I know you' re going through a difficult time, but I'm always here for you"
+        
+    }
 
     /*
     // MARK: - Navigation

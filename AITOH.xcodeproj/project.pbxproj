@@ -141,6 +141,10 @@
 		2FE6E92824015FB700294B51 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E92724015FB700294B51 /* LocationViewController.swift */; };
 		2FE6E92A24018AF600294B51 /* SettingLoginActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E92924018AF600294B51 /* SettingLoginActivityCell.swift */; };
 		2FE6E92C2401A26800294B51 /* SettingReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E92B2401A26800294B51 /* SettingReportViewController.swift */; };
+		2FE6E92E2401ADA000294B51 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E92D2401ADA000294B51 /* ProfileEditViewController.swift */; };
+		2FE6E9312401BF8300294B51 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E9302401BF8300294B51 /* UITextField.swift */; };
+		2FE6E933240224F100294B51 /* ProfileStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E932240224F100294B51 /* ProfileStoryViewController.swift */; };
+		2FE6E9352402255800294B51 /* ProfileStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E9342402255800294B51 /* ProfileStoryCell.swift */; };
 		431057B66CC58B71EA70F948 /* Pods_AITOH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C4183F20AC9BA94F499806 /* Pods_AITOH.framework */; };
 /* End PBXBuildFile section */
 
@@ -299,6 +303,10 @@
 		2FE6E92724015FB700294B51 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2FE6E92924018AF600294B51 /* SettingLoginActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingLoginActivityCell.swift; sourceTree = "<group>"; };
 		2FE6E92B2401A26800294B51 /* SettingReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingReportViewController.swift; sourceTree = "<group>"; };
+		2FE6E92D2401ADA000294B51 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		2FE6E9302401BF8300294B51 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		2FE6E932240224F100294B51 /* ProfileStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoryViewController.swift; sourceTree = "<group>"; };
+		2FE6E9342402255800294B51 /* ProfileStoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoryCell.swift; sourceTree = "<group>"; };
 		70C4183F20AC9BA94F499806 /* Pods_AITOH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AITOH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF85F495871E61719FE39EE /* Pods-AITOH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AITOH.release.xcconfig"; path = "Target Support Files/Pods-AITOH/Pods-AITOH.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -594,6 +602,7 @@
 				2FADB18A24011447007D29E5 /* UIDevice.swift */,
 				2FB2E49B23FBA9DE00E15A81 /* UIImageView.swift */,
 				2FB2E49D23FBAB5800E15A81 /* UIButton.swift */,
+				2FE6E9302401BF8300294B51 /* UITextField.swift */,
 			);
 			path = UIVIew;
 			sourceTree = "<group>";
@@ -649,6 +658,9 @@
 				2FADB18624001CD1007D29E5 /* FollowerTableViewCell.swift */,
 				2FADB18C240115C6007D29E5 /* SettingActivityTableViewController.swift */,
 				2FE6E92924018AF600294B51 /* SettingLoginActivityCell.swift */,
+				2FE6E932240224F100294B51 /* ProfileStoryViewController.swift */,
+				2FE6E9342402255800294B51 /* ProfileStoryCell.swift */,
+				2FE6E92D2401ADA000294B51 /* ProfileEditViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -853,6 +865,7 @@
 				2FADB18B24011447007D29E5 /* UIDevice.swift in Sources */,
 				2FADB16123FFA92F007D29E5 /* UIButton+Extensions.swift in Sources */,
 				2FADB15D23FFA92F007D29E5 /* YPVideoProcessor.swift in Sources */,
+				2FE6E9312401BF8300294B51 /* UITextField.swift in Sources */,
 				2F2C3BDF23E089CC0025A390 /* AppDelegate.swift in Sources */,
 				2FADB15B23FFA92F007D29E5 /* PreiOS10PhotoCapture.swift in Sources */,
 				2FADB15823FFA92F007D29E5 /* YPPhotoCapture.swift in Sources */,
@@ -899,6 +912,7 @@
 				2FADB14E23FFA92F007D29E5 /* YPPagerMenu.swift in Sources */,
 				2FADB13123FFA92F007D29E5 /* YPImageSize.swift in Sources */,
 				2F93242C23FE601A009B7C7F /* MapModeViewController.swift in Sources */,
+				2FE6E9352402255800294B51 /* ProfileStoryCell.swift in Sources */,
 				2FADB13823FFA92F007D29E5 /* YPLibrarySelection.swift in Sources */,
 				2FE6E9242401402C00294B51 /* PrivacyCell.swift in Sources */,
 				2FADB14623FFA92F007D29E5 /* YPGridView.swift in Sources */,
@@ -913,6 +927,7 @@
 				2FADB16923FFA92F007D29E5 /* CIImage+Extensions.swift in Sources */,
 				2FADB12A23FFA92F007D29E5 /* YPCropView.swift in Sources */,
 				2FADB14723FFA92F007D29E5 /* YPAssetZoomableView.swift in Sources */,
+				2FE6E92E2401ADA000294B51 /* ProfileEditViewController.swift in Sources */,
 				2FADB12823FFA92F007D29E5 /* YPVideoFiltersVC.swift in Sources */,
 				2FADB17423FFA92F007D29E5 /* YPHelper.swift in Sources */,
 				2FADB13923FFA92F007D29E5 /* YPMediaItem.swift in Sources */,
@@ -935,6 +950,7 @@
 				2FADB18924010A7C007D29E5 /* Story.swift in Sources */,
 				2FADB13623FFA92F007D29E5 /* YPIcons.swift in Sources */,
 				2FADB16E23FFA92F007D29E5 /* CGRect+Extensions.swift in Sources */,
+				2FE6E933240224F100294B51 /* ProfileStoryViewController.swift in Sources */,
 				2FADB12E23FFA92F007D29E5 /* YPFilterCollectionViewCell.swift in Sources */,
 				2FADB13723FFA92F007D29E5 /* YPImagePicker.swift in Sources */,
 				2FADB12D23FFA92F007D29E5 /* YPFiltersView.swift in Sources */,

@@ -35,6 +35,9 @@ class SettingReportViewController: UIViewController {
         
     }
 
+    @IBAction func btnCancelClick(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

@@ -10,8 +10,13 @@
 		2F2C3BDF23E089CC0025A390 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2C3BDE23E089CC0025A390 /* AppDelegate.swift */; };
 		2F2C3BE123E089CC0025A390 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2C3BE023E089CC0025A390 /* SceneDelegate.swift */; };
 		2F2C3BE623E089CC0025A390 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F2C3BE423E089CC0025A390 /* Login.storyboard */; };
-		2F2C3BE823E089CD0025A390 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F2C3BE723E089CD0025A390 /* Assets.xcassets */; };
 		2F2C3BF323E08FFA0025A390 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F2C3BF223E08FFA0025A390 /* LoginViewController.swift */; };
+		2F8E0105240CA0FE00A13810 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8E0103240CA0FE00A13810 /* MainViewController.swift */; };
+		2F8E0106240CA0FE00A13810 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8E0104240CA0FE00A13810 /* MainViewController.xib */; };
+		2F8E010D240CA5A300A13810 /* LocationHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8E010B240CA5A300A13810 /* LocationHomeViewController.swift */; };
+		2F8E010E240CA5A300A13810 /* LocationHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8E010C240CA5A300A13810 /* LocationHomeViewController.xib */; };
+		2F8E0113240D023200A13810 /* MapHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8E0111240D023200A13810 /* MapHomeViewController.swift */; };
+		2F8E0114240D023200A13810 /* MapHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F8E0112240D023200A13810 /* MapHomeViewController.xib */; };
 		2F93242A23FD9731009B7C7F /* AlbumDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F93242923FD9731009B7C7F /* AlbumDetailCollectionViewCell.swift */; };
 		2F93242C23FE601A009B7C7F /* MapModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F93242B23FE601A009B7C7F /* MapModeViewController.swift */; };
 		2F93242E23FE65D3009B7C7F /* CustomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F93242D23FE65D3009B7C7F /* CustomMarkerView.swift */; };
@@ -143,9 +148,12 @@
 		2FE6E92C2401A26800294B51 /* SettingReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E92B2401A26800294B51 /* SettingReportViewController.swift */; };
 		2FE6E92E2401ADA000294B51 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E92D2401ADA000294B51 /* ProfileEditViewController.swift */; };
 		2FE6E9312401BF8300294B51 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E9302401BF8300294B51 /* UITextField.swift */; };
-		2FE6E933240224F100294B51 /* ProfileStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E932240224F100294B51 /* ProfileStoryViewController.swift */; };
 		2FE6E9352402255800294B51 /* ProfileStoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E9342402255800294B51 /* ProfileStoryCell.swift */; };
 		2FE6E93724022F9D00294B51 /* SettingTouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E93624022F9D00294B51 /* SettingTouchIDViewController.swift */; };
+		2FE6E93924023B8C00294B51 /* ProfileMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E93824023B8C00294B51 /* ProfileMainCell.swift */; };
+		2FE6E93B24023C3F00294B51 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E93A24023C3F00294B51 /* UserProfile.swift */; };
+		2FF8F91D240279500085FFE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF8F91C240279500085FFE8 /* Assets.xcassets */; };
+		2FF8F923240286900085FFE8 /* Lanuch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FF8F922240286900085FFE8 /* Lanuch.storyboard */; };
 		431057B66CC58B71EA70F948 /* Pods_AITOH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C4183F20AC9BA94F499806 /* Pods_AITOH.framework */; };
 /* End PBXBuildFile section */
 
@@ -155,9 +163,14 @@
 		2F2C3BDE23E089CC0025A390 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F2C3BE023E089CC0025A390 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2F2C3BE523E089CC0025A390 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
-		2F2C3BE723E089CD0025A390 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F2C3BEC23E089CD0025A390 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F2C3BF223E08FFA0025A390 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2F8E0103240CA0FE00A13810 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		2F8E0104240CA0FE00A13810 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		2F8E010B240CA5A300A13810 /* LocationHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHomeViewController.swift; sourceTree = "<group>"; };
+		2F8E010C240CA5A300A13810 /* LocationHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationHomeViewController.xib; sourceTree = "<group>"; };
+		2F8E0111240D023200A13810 /* MapHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHomeViewController.swift; sourceTree = "<group>"; };
+		2F8E0112240D023200A13810 /* MapHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapHomeViewController.xib; sourceTree = "<group>"; };
 		2F93242923FD9731009B7C7F /* AlbumDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		2F93242B23FE601A009B7C7F /* MapModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModeViewController.swift; sourceTree = "<group>"; };
 		2F93242D23FE65D3009B7C7F /* CustomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMarkerView.swift; sourceTree = "<group>"; };
@@ -306,9 +319,12 @@
 		2FE6E92B2401A26800294B51 /* SettingReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingReportViewController.swift; sourceTree = "<group>"; };
 		2FE6E92D2401ADA000294B51 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		2FE6E9302401BF8300294B51 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		2FE6E932240224F100294B51 /* ProfileStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoryViewController.swift; sourceTree = "<group>"; };
 		2FE6E9342402255800294B51 /* ProfileStoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoryCell.swift; sourceTree = "<group>"; };
 		2FE6E93624022F9D00294B51 /* SettingTouchIDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTouchIDViewController.swift; sourceTree = "<group>"; };
+		2FE6E93824023B8C00294B51 /* ProfileMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainCell.swift; sourceTree = "<group>"; };
+		2FE6E93A24023C3F00294B51 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		2FF8F91C240279500085FFE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = AITOH/Assets.xcassets; sourceTree = "<group>"; };
+		2FF8F922240286900085FFE8 /* Lanuch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Lanuch.storyboard; sourceTree = "<group>"; };
 		70C4183F20AC9BA94F499806 /* Pods_AITOH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AITOH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF85F495871E61719FE39EE /* Pods-AITOH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AITOH.release.xcconfig"; path = "Target Support Files/Pods-AITOH/Pods-AITOH.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -349,6 +365,7 @@
 				2F93243323FE7674009B7C7F /* Podfile */,
 				2F2C3BDD23E089CC0025A390 /* AITOH */,
 				2F2C3BDC23E089CC0025A390 /* Products */,
+				2FF8F91C240279500085FFE8 /* Assets.xcassets */,
 				21B5FC0AF63E4A4255BDC9B0 /* Pods */,
 				0DBECD1888041501FF34EFA7 /* Frameworks */,
 			);
@@ -377,9 +394,9 @@
 				2FB2E4BA23FD30E100E15A81 /* Model */,
 				2F2C3BE023E089CC0025A390 /* SceneDelegate.swift */,
 				2FB2E4BD23FD5A7500E15A81 /* Photo Album */,
-				2F2C3BE423E089CC0025A390 /* Login.storyboard */,
-				2F2C3BE723E089CD0025A390 /* Assets.xcassets */,
 				2F2C3BEC23E089CD0025A390 /* Info.plist */,
+				2F2C3BE423E089CC0025A390 /* Login.storyboard */,
+				2FF8F922240286900085FFE8 /* Lanuch.storyboard */,
 			);
 			path = AITOH;
 			sourceTree = "<group>";
@@ -619,6 +636,7 @@
 				2FADB18824010A7C007D29E5 /* Story.swift */,
 				2FE6E91924012CDE00294B51 /* Device.swift */,
 				2FE6E9252401413500294B51 /* Privacy.swift */,
+				2FE6E93A24023C3F00294B51 /* UserProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -661,8 +679,8 @@
 				2FE6E93624022F9D00294B51 /* SettingTouchIDViewController.swift */,
 				2FADB18C240115C6007D29E5 /* SettingActivityTableViewController.swift */,
 				2FE6E92924018AF600294B51 /* SettingLoginActivityCell.swift */,
-				2FE6E932240224F100294B51 /* ProfileStoryViewController.swift */,
 				2FE6E9342402255800294B51 /* ProfileStoryCell.swift */,
+				2FE6E93824023B8C00294B51 /* ProfileMainCell.swift */,
 				2FE6E92D2401ADA000294B51 /* ProfileEditViewController.swift */,
 			);
 			path = Profile;
@@ -672,6 +690,12 @@
 			isa = PBXGroup;
 			children = (
 				2FB2E49023FACED500E15A81 /* HomeViewController.swift */,
+				2F8E0103240CA0FE00A13810 /* MainViewController.swift */,
+				2F8E0104240CA0FE00A13810 /* MainViewController.xib */,
+				2F8E010B240CA5A300A13810 /* LocationHomeViewController.swift */,
+				2F8E010C240CA5A300A13810 /* LocationHomeViewController.xib */,
+				2F8E0111240D023200A13810 /* MapHomeViewController.swift */,
+				2F8E0112240D023200A13810 /* MapHomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -786,14 +810,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F8E0114240D023200A13810 /* MapHomeViewController.xib in Resources */,
 				2F93243423FE7674009B7C7F /* Podfile in Resources */,
-				2F2C3BE823E089CD0025A390 /* Assets.xcassets in Resources */,
 				2FADB12523FFA92F007D29E5 /* YPImagePickerLocalizable.strings in Resources */,
 				2FADB15623FFA92F007D29E5 /* YPLibraryView.xib in Resources */,
+				2FF8F923240286900085FFE8 /* Lanuch.storyboard in Resources */,
 				2FADB12423FFA92F007D29E5 /* LICENSE in Resources */,
+				2F8E0106240CA0FE00A13810 /* MainViewController.xib in Resources */,
 				2FADB12623FFA92F007D29E5 /* Assets.xcassets in Resources */,
 				2FADB17923FFA92F007D29E5 /* README.md in Resources */,
+				2F8E010E240CA5A300A13810 /* LocationHomeViewController.xib in Resources */,
 				2F2C3BE623E089CC0025A390 /* Login.storyboard in Resources */,
+				2FF8F91D240279500085FFE8 /* Assets.xcassets in Resources */,
 				2FADB12923FFA92F007D29E5 /* YPVideoFiltersVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -874,6 +902,7 @@
 				2FADB15823FFA92F007D29E5 /* YPPhotoCapture.swift in Sources */,
 				2FADB17123FFA92F007D29E5 /* CGFloat+Extensions.swift in Sources */,
 				2F93243A23FEB3CB009B7C7F /* MapMakerView.swift in Sources */,
+				2F8E010D240CA5A300A13810 /* LocationHomeViewController.swift in Sources */,
 				2FADB16B23FFA92F007D29E5 /* URL+Extensions.swift in Sources */,
 				2FB2E4BC23FD310C00E15A81 /* Album.swift in Sources */,
 				2FE6E92224013FD700294B51 /* PrivacyViewController.swift in Sources */,
@@ -886,6 +915,7 @@
 				2FADB12F23FFA92F007D29E5 /* YPFilter.swift in Sources */,
 				2F93243023FE66CE009B7C7F /* PhotoDetailViewController.swift in Sources */,
 				2F93243223FE6748009B7C7F /* PhotoPlace.swift in Sources */,
+				2FE6E93924023B8C00294B51 /* ProfileMainCell.swift in Sources */,
 				2F93242A23FD9731009B7C7F /* AlbumDetailCollectionViewCell.swift in Sources */,
 				2FADB16C23FFA92F007D29E5 /* AVFoundation+Extensions.swift in Sources */,
 				2FE6E9262401413500294B51 /* Privacy.swift in Sources */,
@@ -953,7 +983,6 @@
 				2FADB18924010A7C007D29E5 /* Story.swift in Sources */,
 				2FADB13623FFA92F007D29E5 /* YPIcons.swift in Sources */,
 				2FADB16E23FFA92F007D29E5 /* CGRect+Extensions.swift in Sources */,
-				2FE6E933240224F100294B51 /* ProfileStoryViewController.swift in Sources */,
 				2FADB12E23FFA92F007D29E5 /* YPFilterCollectionViewCell.swift in Sources */,
 				2FADB13723FFA92F007D29E5 /* YPImagePicker.swift in Sources */,
 				2FADB12D23FFA92F007D29E5 /* YPFiltersView.swift in Sources */,
@@ -967,13 +996,16 @@
 				2FADB18D240115C6007D29E5 /* SettingActivityTableViewController.swift in Sources */,
 				2FADB15123FFA92F007D29E5 /* LibraryMediaManager.swift in Sources */,
 				2FADB17D23FFCCF8007D29E5 /* StoryReviewViewController.swift in Sources */,
+				2FE6E93B24023C3F00294B51 /* UserProfile.swift in Sources */,
 				2FADB12B23FFA92F007D29E5 /* YPCropVC.swift in Sources */,
+				2F8E0113240D023200A13810 /* MapHomeViewController.swift in Sources */,
 				2FADB15023FFA92F007D29E5 /* YPLibraryVC.swift in Sources */,
 				2FADB13B23FFA92F007D29E5 /* YPPermissionDeniedPopup.swift in Sources */,
 				2FE6E91C24013B3B00294B51 /* StoryMainCell.swift in Sources */,
 				2FADB17223FFA92F007D29E5 /* UICollectionView+Extensions.swift in Sources */,
 				2FADB16323FFA92F007D29E5 /* AVMutableComposition+Extensions.swift in Sources */,
 				2FB2E49723FACF0F00E15A81 /* ProfileViewController.swift in Sources */,
+				2F8E0105240CA0FE00A13810 /* MainViewController.swift in Sources */,
 				2FADB14423FFA92F007D29E5 /* YPLibraryVC+PanGesture.swift in Sources */,
 				2FADB17323FFA92F007D29E5 /* IndexSet+Extensions.swift in Sources */,
 				2FADB14123FFA92F007D29E5 /* YPVideoCaptureVC.swift in Sources */,
@@ -1154,7 +1186,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 230340633A5AB41D425B6021 /* Pods-AITOH.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1179,7 +1211,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7EF85F495871E61719FE39EE /* Pods-AITOH.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

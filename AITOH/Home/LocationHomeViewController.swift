@@ -67,8 +67,11 @@ class LocationHomeViewController: UIViewController, UITableViewDataSource, UITab
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
        {
+        let region = regions[indexPath.row]
         let storyboard = UIStoryboard(name: "Region", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "RegionGroupDashboardViewController")
+        let controller = storyboard.instantiateViewController(withIdentifier: "RegionGroupDashboardViewController")as! RegionGroupDashboardViewController
+        controller.region = region
+        print("case1: ")
         self.present(controller, animated: true, completion: nil)
 
 

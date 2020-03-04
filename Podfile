@@ -8,6 +8,8 @@ target 'AITOH' do
   # Pods for AITOH
 pod 'GoogleMaps'
 pod 'GooglePlaces'
+pod 'Alamofire', '~> 5.0'
+pod 'SwiftyJSON', '~> 4.0'
 pod 'YPImagePicker'
 use_frameworks!
 end

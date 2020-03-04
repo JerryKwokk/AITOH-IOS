@@ -7,24 +7,73 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+class LocationHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-class LocationHomeViewController: UIViewController {
-
+    var regions: [Region] = []
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       guard let url = URL(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/region") else { return }
+       tableView.rowHeight = 225
+       tableView.estimatedRowHeight = 0
+       AF.request(url).validate().responseJSON { (response) in
+           switch response.result {
+           case .success(let value):
+            let json = JSON(value)
+                  // 獲取我們 list Array
+                  let list = json["regions"].arrayValue
+                  // 創建一個 [Book] 來存放獲取的 Array
+                  for regionJson in list {
+                      // 實例化一個 Book，並透過 bookJson 初始化它
+                      let region = Region(json: regionJson)
+                      // 加到上面 books 中
+                      self.regions.append(region)
+                  }
+            
+                print(json)
+            print(self.regions.count)
+            self.tableView.reloadData()
+            break
+               
+           case .failure(let error):
+               print(error)
+           }
+       }
+       
+        
+        let nibName = UINib(nibName: "LocationHomeTableViewCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "LocationHomeTableViewCell")
+        
+        
+        tableView.dataSource = self
+        tableView.delegate = self
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return regions.count
+        
     }
-    */
+       
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let region = regions[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LocationHomeTableViewCell")as! LocationHomeTableViewCell
+        cell.initCommit(region: region)
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+       {
+        let storyboard = UIStoryboard(name: "Region", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "RegionGroupDashboardViewController")
+        self.present(controller, animated: true, completion: nil)
+
+
+       }
+    
+
 
 }

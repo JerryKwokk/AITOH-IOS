@@ -14,4 +14,8 @@ extension UITextField{
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor.black.cgColor
     }
+    
+    func loginFormat(){
+        self.addLine(position: .LINE_POSITION_BOTTOM, color: .darkGray, width: 0.5)
+    }
 }

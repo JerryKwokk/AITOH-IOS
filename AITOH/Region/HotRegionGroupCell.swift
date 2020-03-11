@@ -18,7 +18,11 @@ class HotRegionGroupCell: UICollectionViewCell {
         title.text = region.name
         print("IN cell" + region.bgImagePath)
         let url = URL(string: region.bgImagePath)
+        do{
         self.bgImage.downloadImage(from: url!)
+        }catch{
+            print("error")
+        }
         bgImage.layer.cornerRadius = 10
     }
     

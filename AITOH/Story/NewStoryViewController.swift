@@ -14,6 +14,7 @@ class NewStoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+ //       self.navigationController!.isNavigationBarHidden = true
         let vc = storyboard!.instantiateViewController(identifier: "StoryReviewViewController") as? StoryReviewViewController
         config.isScrollToChangeModesEnabled = true
         config.onlySquareImagesFromCamera = false
@@ -46,6 +47,13 @@ class NewStoryViewController: UIViewController {
         present(picker, animated: true, completion: nil)
         // Do any additional setup after loading the view.
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+
     
 
     /*

@@ -21,7 +21,7 @@ class StoryMainCell: UITableViewCell, UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if desc.textColor == UIColor.lightGray {
-            desc.text = nil
+            desc.text = ""
             desc.textColor = UIColor.black
         }
     }

@@ -161,6 +161,10 @@
 		2FFA514A240FAB810032396D /* RegionGroupDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA5149240FAB810032396D /* RegionGroupDashboardViewController.swift */; };
 		2FFA514C240FB01B0032396D /* HotRegionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA514B240FB01B0032396D /* HotRegionGroupCell.swift */; };
 		2FFA514E240FB1210032396D /* HotRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA514D240FB1210032396D /* HotRegion.swift */; };
+		2FFA51502410A7D40032396D /* PrivateRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA514F2410A7D40032396D /* PrivateRegion.swift */; };
+		2FFA51522410E09C0032396D /* PrivateGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA51512410E09C0032396D /* PrivateGroupTableViewCell.swift */; };
+		2FFA51542411011B0032396D /* HotRegionHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA51532411011B0032396D /* HotRegionHistoryCell.swift */; };
+		2FFA5156241101ED0032396D /* RegionHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA5155241101ED0032396D /* RegionHistory.swift */; };
 		431057B66CC58B71EA70F948 /* Pods_AITOH.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C4183F20AC9BA94F499806 /* Pods_AITOH.framework */; };
 /* End PBXBuildFile section */
 
@@ -339,6 +343,10 @@
 		2FFA5149240FAB810032396D /* RegionGroupDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionGroupDashboardViewController.swift; sourceTree = "<group>"; };
 		2FFA514B240FB01B0032396D /* HotRegionGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotRegionGroupCell.swift; sourceTree = "<group>"; };
 		2FFA514D240FB1210032396D /* HotRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotRegion.swift; sourceTree = "<group>"; };
+		2FFA514F2410A7D40032396D /* PrivateRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateRegion.swift; sourceTree = "<group>"; };
+		2FFA51512410E09C0032396D /* PrivateGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateGroupTableViewCell.swift; sourceTree = "<group>"; };
+		2FFA51532411011B0032396D /* HotRegionHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotRegionHistoryCell.swift; sourceTree = "<group>"; };
+		2FFA5155241101ED0032396D /* RegionHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionHistory.swift; sourceTree = "<group>"; };
 		70C4183F20AC9BA94F499806 /* Pods_AITOH.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AITOH.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF85F495871E61719FE39EE /* Pods-AITOH.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AITOH.release.xcconfig"; path = "Target Support Files/Pods-AITOH/Pods-AITOH.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -655,6 +663,8 @@
 				2FE6E9252401413500294B51 /* Privacy.swift */,
 				2FE6E93A24023C3F00294B51 /* UserProfile.swift */,
 				2FFA514D240FB1210032396D /* HotRegion.swift */,
+				2FFA514F2410A7D40032396D /* PrivateRegion.swift */,
+				2FFA5155241101ED0032396D /* RegionHistory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -757,6 +767,8 @@
 			children = (
 				2FFA5149240FAB810032396D /* RegionGroupDashboardViewController.swift */,
 				2FFA514B240FB01B0032396D /* HotRegionGroupCell.swift */,
+				2FFA51512410E09C0032396D /* PrivateGroupTableViewCell.swift */,
+				2FFA51532411011B0032396D /* HotRegionHistoryCell.swift */,
 			);
 			path = Region;
 			sourceTree = "<group>";
@@ -930,6 +942,7 @@
 				2FE6E9312401BF8300294B51 /* UITextField.swift in Sources */,
 				2F2C3BDF23E089CC0025A390 /* AppDelegate.swift in Sources */,
 				2FADB15B23FFA92F007D29E5 /* PreiOS10PhotoCapture.swift in Sources */,
+				2FFA51522410E09C0032396D /* PrivateGroupTableViewCell.swift in Sources */,
 				2FADB15823FFA92F007D29E5 /* YPPhotoCapture.swift in Sources */,
 				2FADB17123FFA92F007D29E5 /* CGFloat+Extensions.swift in Sources */,
 				2FFA514C240FB01B0032396D /* HotRegionGroupCell.swift in Sources */,
@@ -980,11 +993,13 @@
 				2FADB13123FFA92F007D29E5 /* YPImageSize.swift in Sources */,
 				2F93242C23FE601A009B7C7F /* MapModeViewController.swift in Sources */,
 				2FE6E9352402255800294B51 /* ProfileStoryCell.swift in Sources */,
+				2FFA51502410A7D40032396D /* PrivateRegion.swift in Sources */,
 				2FADB13823FFA92F007D29E5 /* YPLibrarySelection.swift in Sources */,
 				2FE6E9242401402C00294B51 /* PrivacyCell.swift in Sources */,
 				2FADB14623FFA92F007D29E5 /* YPGridView.swift in Sources */,
 				2FFA514E240FB1210032396D /* HotRegion.swift in Sources */,
 				2FADB14D23FFA92F007D29E5 /* YPBottomPager.swift in Sources */,
+				2FFA51542411011B0032396D /* HotRegionHistoryCell.swift in Sources */,
 				2FADB16523FFA92F007D29E5 /* AVPlayer+Extensions.swift in Sources */,
 				2FB2E49523FACF0100E15A81 /* ActivityViewController.swift in Sources */,
 				2FADB15923FFA92F007D29E5 /* YPCameraView.swift in Sources */,
@@ -1028,6 +1043,7 @@
 				2FE6E92024013E3C00294B51 /* StoryPrivacyCell.swift in Sources */,
 				2FE6E91E24013D3500294B51 /* StoryLocationCell.swift in Sources */,
 				2FADB13223FFA92F007D29E5 /* YPImagePickerConfiguration.swift in Sources */,
+				2FFA5156241101ED0032396D /* RegionHistory.swift in Sources */,
 				2FADB13523FFA92F007D29E5 /* YPPickerScreen.swift in Sources */,
 				2FADB18D240115C6007D29E5 /* SettingActivityTableViewController.swift in Sources */,
 				2FADB15123FFA92F007D29E5 /* LibraryMediaManager.swift in Sources */,

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
+
 enum LINE_POSITION {
     case LINE_POSITION_TOP
     case LINE_POSITION_BOTTOM
@@ -86,6 +89,9 @@ class LoginViewController: UIViewController {
         lblErrorMess.isHidden = true
         
     }
+    @IBAction func btnSendCode(_ sender: UIButton) {
+        lblVerifyCodeMess.isHidden = false
+    }
     @IBAction func btnSignUpClick(_ sender: UIButton) {
         performSegue(withIdentifier: "toSignUp", sender: self)
     }
@@ -107,15 +113,100 @@ class LoginViewController: UIViewController {
                self.viewForgetPanel.transform = CGAffineTransform(translationX: x, y: 0)})
     }
     @IBAction func btnLoginClick(_ sender: UIButton) {
-        if(txtLoginUsername.text == "kevin.api" && txtLoginPassword.text == "happy1234"){
+
+        
+        if(txtLoginUsername.text == "" || txtLoginPassword.text == ""){
+            lblErrorMess.isHidden = false
+        }else{
+            AF.request(URL.init(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/login")!, method: .post, parameters: ["username":txtLoginUsername.text! ,
+                   "pwd_hash":txtLoginPassword.text!], encoding: JSONEncoding.default).responseJSON { (response) in
+
+                       switch response.result {
+
+                       case .success(let value):
+                           let json = JSON(value)
+                           
+                           print(json)
+                           if(json["loginSuccessful"].boolValue){
+                            let viewController:TabViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "TabViewController") as! TabViewController
+                            UserDefaults.standard.set(json["userId"].stringValue, forKey: "userId")
+                            UserDefaults.standard.set(json["username"].stringValue,forKey: "username")
+                            print(UserDefaults.standard.value(forKey: "userId"))
+                            
+                            viewController.modalPresentationStyle = .fullScreen
+                            let transition = CATransition()
+                            transition.duration = 0.3
+                            transition.type = CATransitionType.push
+                            transition.subtype = CATransitionSubtype.fromRight
+                            transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.linear)
+                            self.view.window!.layer.add(transition, forKey: kCATransition)
+                            
+                            self.present(viewController, animated: false, completion: nil)
+
+                            // 返回 self.dismissViewControllerAnimated(true, completion: nil)
+                            // save the presenting ViewController
+
+                                        //傳至下一頁面
+                            
+                           }
+                           break
+                       case .failure(let error):
+                           print(error)
+                           break
+                       }
+                   }
+            
+        }
+        
+       
+        
+        
+       /* AF.request(url!).validate().responseJSON { (response) in
+        switch response.result {
+        case .success(let value):
+         let json = JSON(value)
+               let list = json["regions"].arrayValue
+
+               for regionJson in list {
+                   // 實例化一個 Book，並透過 bookJson 初始化它
+                   let region = HotRegion(json: regionJson)
+                   
+                   self.hotRegionGroup.append(region)
+               }
+               let moreRegion = HotRegion(id: -1, name: "")
+               self.hotRegionGroup.append(moreRegion)
+             print(json)
+         self.collectView.reloadData()
+         break
+            
+        case .failure(let error):
+            print(error)
+        }*/
+        
+        
+        
+        
+        
+        
+        
+      /*  if(txtLoginUsername.text == "kevin.api" && txtLoginPassword.text == "happy1234"){
             UserDefaults.standard.set(txtLoginUsername.text, forKey: "username")
+           
+            
+            
+            
+            
+            
+            
             UserDefaults.standard.set("1047", forKey: "userId")
             print(UserDefaults.standard.value(forKey: "username") ?? "test")
             print(UserDefaults.standard.value(forKey: "userId") ?? "test")
+
+            // 返回 self.dismissViewControllerAnimated(true, completion: nil)
             // save the presenting ViewController
 
                         //傳至下一頁面
-            let viewController:UIViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "TabViewController")
+            let viewController:TabViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "TabViewController") as! TabViewController
             viewController.modalPresentationStyle = .fullScreen
             let transition = CATransition()
             transition.duration = 0.3
@@ -125,11 +216,11 @@ class LoginViewController: UIViewController {
             view.window!.layer.add(transition, forKey: kCATransition)
             
             self.present(viewController, animated: false, completion: nil)
-            // 返回 self.dismissViewControllerAnimated(true, completion: nil)
-
         }else{
             lblErrorMess.isHidden = false
         }
+ 
+ */
         
     }
     

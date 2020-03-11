@@ -38,11 +38,14 @@ class ProfileEditViewController: UIViewController {
     
     func loadUI(){
         icon.round()
-        fName.format()
-        username.format()
-        desc.format()
-        website.format()
-        email.format()
+        fName.loginFormat()
+        username.loginFormat()
+        desc.loginFormat()
+        website.loginFormat()
+        email.loginFormat()
+    }
+    @IBAction func btnCancelClick(_ sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btnSaveClick(_ sender: Any) {
@@ -53,17 +56,7 @@ class ProfileEditViewController: UIViewController {
               controller.addAction(okAction)
               present(controller, animated: true, completion: nil)
         }else{
-            if let presenter = presentedViewController as? ProfileViewController {
-                if(selected){
-                    presenter.iconImage.image = selectPhoto
-                    presenter.descrip.text = desc.text
-                    print("test")
-                }else{
-                    presenter.descrip.text = desc.text
-                    print("test2")
-                }
-                
-            }
+           
             print("dismiss")
             self.navigationController?.popViewController(animated: true)
         }

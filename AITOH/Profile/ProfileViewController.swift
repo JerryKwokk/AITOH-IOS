@@ -10,52 +10,70 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var follower: UIButton!
-    @IBOutlet weak var following: UIButton!
-    @IBOutlet weak var descrip: UITextView!
-    @IBOutlet weak var bgImage: UIImageView!
-    @IBOutlet weak var iconImage: UIImageView!
-    @IBOutlet weak var btnEditProfile: UIButton!
-    
-    @IBOutlet weak var profilePostCollection: UICollectionViewCell!
-    
+    var storys:[Story] = []
+      var user: UserProfile!
+    @IBOutlet weak var tableView: UITableView!
+
     override func viewDidLoad() {
-        super.viewDidLoad()
-        loadUI()
+          super.viewDidLoad()
+          storys = createArray()
+          user = createUser()
+          tableView.separatorStyle = .none
+       
+        //navigationController?.hidesBarsOnTap = true
         // Do any additional setup after loading the view.
-    }
+      }
+   
     
-    func loadUI(){
-        username.text = UserDefaults.standard.value(forKey: "username") as? String;
-        follower.setTitle("346", for: .normal)
-        following.setTitle("18", for: .normal)
-        iconImage.layer.cornerRadius = iconImage.frame.size.width / 2
-        btnEditProfile.format()
-        iconImage.round()
-        bgImage.layer.cornerRadius = 20
-        
-        
-    }
+
+      func createArray() -> [Story]{
+          let story = Story(id: "1", username: "kevin.api", icon: UIImage(named: "profileIconImage.png")!, iconPath: "null", desc: "I am sad", time: "3 seconds before", location: "Tseung Kwan O, Hong Kong", img: UIImage(named: "profileIconImage.png")!, imgPath: "null")
+          
+          return [story]
+      }
+      func createUser() -> UserProfile{
+          let kevin = UserProfile(userId: "1", username: "kevin.api", privacy: true, follower: 6, following: 12, desr: "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", iconImage: UIImage(named:"profileIconImage.png" )!, bgImage: UIImage(named: "profileBackgroundImage.png")!)
+          
+          return kevin
+      }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
+
+extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
+
+
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return storys.count + 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if(indexPath.row == 0){
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileMainCell") as! ProfileMainCell
+            cell.setup(user: user)
+             return cell
+        }else{
+            print("setArray")
+            let story = storys[indexPath.row - 1]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileStoryCell") as! ProfileStoryCell
+            cell.setup(story: story)
+            
+            return cell
+        }
+        
+        
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(indexPath.row == 0){
+            return 560
+        }else{
+            return 300
+        }
+        
+    }
+}
+

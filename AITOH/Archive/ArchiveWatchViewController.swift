@@ -1,23 +1,29 @@
 //
-//  TabViewController.swift
+//  ArchiveWatchViewController.swift
 //  AITOH
 //
-//  Created by Jerry Kwok on 17/2/2020.
+//  Created by Jerry Kwok on 11/3/2020.
 //  Copyright © 2020 AITOH. All rights reserved.
 //
 
 import UIKit
+import Alamofire
 
-class TabViewController: UITabBarController {
+class ArchiveWatchViewController: UIViewController {
 
+    var id:Int = -1
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var desc: UITextView!
+    @IBOutlet weak var image: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       // self.navigationController?.navigationBar.isHidden = true
+
         // Do any additional setup after loading the view.
     }
     
-        
-    
+
     /*
     // MARK: - Navigation
 

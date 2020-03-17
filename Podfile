@@ -11,5 +11,6 @@ pod 'GooglePlaces'
 pod 'Alamofire', '~> 5.0'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'YPImagePicker'
+pod 'PageMenu'
 use_frameworks!
 end

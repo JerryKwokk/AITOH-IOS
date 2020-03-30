@@ -8,9 +8,13 @@ target 'AITOH' do
   # Pods for AITOH
 pod 'GoogleMaps'
 pod 'GooglePlaces'
+pod 'LocationPicker'
 pod 'Alamofire', '~> 5.0'
 pod 'SwiftyJSON', '~> 4.0'
 pod 'YPImagePicker'
 pod 'PageMenu'
+pod 'SKPhotoBrowser'
+pod 'AWSS3'
+
 use_frameworks!
 end

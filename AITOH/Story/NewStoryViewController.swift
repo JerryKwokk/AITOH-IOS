@@ -24,7 +24,7 @@ class NewStoryViewController: UIViewController {
         config.shouldSaveNewPicturesToAlbum = true
         config.albumName = "DefaultYPImagePickerAlbumName"
         config.startOnScreen = YPPickerScreen.photo
-        config.screens = [.library, .photo, .video]
+        config.screens = [.library, .photo, .video, .audioVC]
         config.showsCrop = .none
         config.targetImageSize = YPImageSize.original
         config.overlayView = UIView()
@@ -32,6 +32,7 @@ class NewStoryViewController: UIViewController {
         config.hidesBottomBar = false
         config.preferredStatusBarStyle = UIStatusBarStyle.darkContent
         config.maxCameraZoomFactor = 1.0
+        config.wordings.next = "Next"
         let picker = YPImagePicker(configuration: config)
         picker.didFinishPicking { [unowned picker] items, _ in
             if let photo = items.singlePhoto {

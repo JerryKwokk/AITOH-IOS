@@ -7,13 +7,46 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class RecntlyViewedListViewController: UIViewController {
-    var recentViewList: [RecebtView] = []
+    var recentViewList: [RecentView] = []
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let userId = UserDefaults.standard.string(forKey: "userId")
+        guard let url = URL(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/recentview?userId=" + userId!) else { return }
+        print(url)
+        createArray(gate: url)
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func createArray(gate: URL){
+        AF.request(gate).validate().responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+             let json = JSON(value)
+             let list = json["recentViews"].arrayValue
+             for recentViewJson in list {
+                // 實例化一個 Book，並透過 bookJson 初始化它
+                let recentView = RecentView(json: recentViewJson)
+                self.recentViewList.append(recentView)
+             }
+             
+             print(self.recentViewList.count)
+             print(json)
+                 self.tableView.reloadData()
+             
+            
+             break
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
     }
     
     
@@ -40,15 +73,53 @@ extension RecntlyViewedListViewController:UITableViewDataSource, UITableViewDele
         print("setArray")
         let recentView = recentViewList[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecentlyViewCell") as! RecentlyViewCell
-        cell.initCommit(archive: recentView)
+        cell.initCommit(recent: recentView)
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let vc = storyboard?.instantiateViewController(identifier: "ArchiveWatchViewController") as? ArchiveWatchViewController
-        vc?.id = recentViewList[indexPath.row].historyId
-        self.navigationController?.pushViewController(vc!, animated: true)
+        let historyId = recentViewList[indexPath.row].historyId
+        let userId = UserDefaults.standard.string(forKey: "userId")
+        let history:History
+        guard let getArchiveURL = URL(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/archive?userId=" + userId! + "&historyId=" + String(historyId)) else { return }
+        
+        print(getArchiveURL)
+        AF.request(getArchiveURL).validate().responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+             let json = JSON(value)
+             print(json)
+             let history = History(json: json)
+             print("Click archive")
+             
+             if history.historyMediaPath == "" || history.historyMediaPath == " "{
+                let  vc = (self.storyboard?.instantiateViewController(identifier: "ArchiveWatchTextViewController") as? ArchiveWatchTextViewController)!
+                vc.history = history
+                self.present(vc, animated: true, completion: nil)
+             }else if history.mediaTypeId == 1{
+                let vc = (self.storyboard?.instantiateViewController(identifier: "ArchiveWatchViewController") as? ArchiveWatchViewController)!
+                vc.history = history
+                self.present(vc, animated: true, completion: nil)
+             }else{
+                let vc = (self.storyboard?.instantiateViewController(identifier: "ArchiveWatchVideoViewController") as? ArchiveWatchVideoViewController)!
+                vc.history = history
+                self.present(vc, animated: true, completion: nil)
+             }
+             
+             
+            
+             break
+                
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }

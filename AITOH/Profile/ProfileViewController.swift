@@ -13,16 +13,44 @@ class ProfileViewController: UIViewController {
     var storys:[Story] = []
       var user: UserProfile!
     @IBOutlet weak var tableView: UITableView!
+    lazy var refeshControl: UIRefreshControl = {
+        let refeshControl = UIRefreshControl()
+        refeshControl.tintColor = .gray
+        refeshControl.addTarget(self, action: #selector(requestData), for: .valueChanged)
+        return refeshControl
+    }()
 
     override func viewDidLoad() {
           super.viewDidLoad()
           storys = createArray()
           user = createUser()
           tableView.separatorStyle = .none
-       
+        
+          tableView.refreshControl = refeshControl
         //navigationController?.hidesBarsOnTap = true
         // Do any additional setup after loading the view.
       }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+    }
+    
+    @objc func requestData(){
+        print("refesh data")
+        let refeshDead = DispatchTime.now() + .milliseconds(900)
+        DispatchQueue.main.asyncAfter(deadline: refeshDead){
+            self.refeshControl.endRefreshing()
+        }
+    }
    
     
 
@@ -43,8 +71,6 @@ class ProfileViewController: UIViewController {
 }
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
-
-
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return storys.count + 1

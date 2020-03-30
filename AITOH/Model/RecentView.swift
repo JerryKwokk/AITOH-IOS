@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-struct RecebtView {
+struct RecentView {
     var id:Int
     var historyId: Int
     var iconImagePath: String
@@ -16,10 +16,11 @@ struct RecebtView {
     var date: String
     
     init(json: JSON) {
-        id = json[""].intValue
-        historyId = json[""].intValue
-        iconImagePath = json[""].stringValue
-        content = json[""].stringValue
-        date = json[""].stringValue
+        id = json["id"].intValue
+        historyId = json["historyId"].intValue
+        iconImagePath = json["user_iconPath"].stringValue
+        content = json["description"].stringValue
+        date = json["create_date"].stringValue
+        print(String(id) + String(historyId) + iconImagePath + content + date)
     }
 }

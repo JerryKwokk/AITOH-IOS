@@ -14,11 +14,14 @@ class RecentlyViewCell: UITableViewCell {
     @IBOutlet weak var content: UITextView!
     @IBOutlet weak var timeline: UILabel!
     
-    func initCommit(archive: RecebtView){
-        content.text = archive.content
-        timeline.text = archive.date + " view"
-        let url = URL(string: archive.iconImagePath)
+    func initCommit(recent: RecentView){
+       print(recent)
+        content.text = recent.content
+        timeline.text = recent.date + " view"
+        let url = URL(string: recent.iconImagePath)
         icon.downloadImage(from: url!)
+        icon.round()
+        icon.layer.borderWidth = 3
     }
 
 }

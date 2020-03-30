@@ -139,6 +139,16 @@
 		2FB2E4BC23FD310C00E15A81 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E4BB23FD310C00E15A81 /* Album.swift */; };
 		2FB2E4C623FD685600E15A81 /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E4C523FD685600E15A81 /* AlbumDetailViewController.swift */; };
 		2FB2E4C823FD68CD00E15A81 /* AlbumPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2E4C723FD68CD00E15A81 /* AlbumPhoto.swift */; };
+		2FD8DF8E24231C1F004C5A92 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF8D24231C1F004C5A92 /* History.swift */; };
+		2FD8DF90242B1F39004C5A92 /* ArchiveWatchTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF8F242B1F39004C5A92 /* ArchiveWatchTextViewController.swift */; };
+		2FD8DF94242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF93242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift */; };
+		2FD8DF97242C6A96004C5A92 /* AudioRecorderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FD8DF95242C6A95004C5A92 /* AudioRecorderViewController.xib */; };
+		2FD8DF98242C6A96004C5A92 /* AudioRecorderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF96242C6A96004C5A92 /* AudioRecorderViewController.swift */; };
+		2FD8DF9A242C816B004C5A92 /* Story.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD8DF99242C816B004C5A92 /* Story.storyboard */; };
+		2FD8DF9C242DE423004C5A92 /* ReviewAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF9B242DE423004C5A92 /* ReviewAlbumViewController.swift */; };
+		2FD8DF9E242DE451004C5A92 /* ReviewAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF9D242DE451004C5A92 /* ReviewAlbumCell.swift */; };
+		2FD8DFA0242DE4D3004C5A92 /* SelectedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF9F242DE4D3004C5A92 /* SelectedPhoto.swift */; };
+		2FD8DFA6242F508F004C5A92 /* ReviewAlbumTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFA5242F508F004C5A92 /* ReviewAlbumTitleCell.swift */; };
 		2FE6E91A24012CDE00294B51 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91924012CDE00294B51 /* Device.swift */; };
 		2FE6E91C24013B3B00294B51 /* StoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */; };
 		2FE6E91E24013D3500294B51 /* StoryLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */; };
@@ -329,6 +339,16 @@
 		2FB2E4BB23FD310C00E15A81 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		2FB2E4C523FD685600E15A81 /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
 		2FB2E4C723FD68CD00E15A81 /* AlbumPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumPhoto.swift; sourceTree = "<group>"; };
+		2FD8DF8D24231C1F004C5A92 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		2FD8DF8F242B1F39004C5A92 /* ArchiveWatchTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveWatchTextViewController.swift; sourceTree = "<group>"; };
+		2FD8DF93242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveWatchVideoViewController.swift; sourceTree = "<group>"; };
+		2FD8DF95242C6A95004C5A92 /* AudioRecorderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioRecorderViewController.xib; sourceTree = "<group>"; };
+		2FD8DF96242C6A96004C5A92 /* AudioRecorderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorderViewController.swift; sourceTree = "<group>"; };
+		2FD8DF99242C816B004C5A92 /* Story.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Story.storyboard; sourceTree = "<group>"; };
+		2FD8DF9B242DE423004C5A92 /* ReviewAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAlbumViewController.swift; sourceTree = "<group>"; };
+		2FD8DF9D242DE451004C5A92 /* ReviewAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAlbumCell.swift; sourceTree = "<group>"; };
+		2FD8DF9F242DE4D3004C5A92 /* SelectedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPhoto.swift; sourceTree = "<group>"; };
+		2FD8DFA5242F508F004C5A92 /* ReviewAlbumTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAlbumTitleCell.swift; sourceTree = "<group>"; };
 		2FE6E91924012CDE00294B51 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryMainCell.swift; sourceTree = "<group>"; };
 		2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryLocationCell.swift; sourceTree = "<group>"; };
@@ -438,6 +458,7 @@
 				2FFA5147240FAA0C0032396D /* Region.storyboard */,
 				2FFA51572418D7A30032396D /* Archive.storyboard */,
 				2FF8F922240286900085FFE8 /* Lanuch.storyboard */,
+				2FD8DF99242C816B004C5A92 /* Story.storyboard */,
 			);
 			path = AITOH;
 			sourceTree = "<group>";
@@ -684,6 +705,8 @@
 				2FFA5155241101ED0032396D /* RegionHistory.swift */,
 				2FFA51652418DB540032396D /* Archive.swift */,
 				2FFA51632418DB250032396D /* RecentView.swift */,
+				2FD8DF8D24231C1F004C5A92 /* History.swift */,
+				2FD8DF9F242DE4D3004C5A92 /* SelectedPhoto.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -693,9 +716,12 @@
 			children = (
 				2FB2E4B623FD2FD600E15A81 /* AlbumCell.swift */,
 				2FB2E4B823FD30A900E15A81 /* AlbumListViewController.swift */,
+				2FD8DF9B242DE423004C5A92 /* ReviewAlbumViewController.swift */,
 				2FB2E4C523FD685600E15A81 /* AlbumDetailViewController.swift */,
+				2FD8DF9D242DE451004C5A92 /* ReviewAlbumCell.swift */,
 				2F93242923FD9731009B7C7F /* AlbumDetailCollectionViewCell.swift */,
 				2F93243923FEB3CB009B7C7F /* MapMakerView.swift */,
+				2FD8DFA5242F508F004C5A92 /* ReviewAlbumTitleCell.swift */,
 				2F93242D23FE65D3009B7C7F /* CustomMarkerView.swift */,
 				2F93242B23FE601A009B7C7F /* MapModeViewController.swift */,
 				2F93242F23FE66CE009B7C7F /* PhotoDetailViewController.swift */,
@@ -765,7 +791,9 @@
 				2FFA515B2418D9240032396D /* RecntlyViewedListViewController.swift */,
 				2FFA515D2418D9530032396D /* ArchiveCell.swift */,
 				2FFA515F2418D96E0032396D /* RecentlyViewCell.swift */,
+				2FD8DF93242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift */,
 				2FFA51672418DCCB0032396D /* ArchiveWatchViewController.swift */,
+				2FD8DF8F242B1F39004C5A92 /* ArchiveWatchTextViewController.swift */,
 			);
 			path = Archive;
 			sourceTree = "<group>";
@@ -775,6 +803,8 @@
 			children = (
 				2FB2E49823FACF4000E15A81 /* NewStoryViewController.swift */,
 				2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */,
+				2FD8DF96242C6A96004C5A92 /* AudioRecorderViewController.swift */,
+				2FD8DF95242C6A95004C5A92 /* AudioRecorderViewController.xib */,
 				2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */,
 				2FE6E91F24013E3C00294B51 /* StoryPrivacyCell.swift */,
 				2FADB17C23FFCCF8007D29E5 /* StoryReviewViewController.swift */,
@@ -881,6 +911,7 @@
 				2FADB15623FFA92F007D29E5 /* YPLibraryView.xib in Resources */,
 				2FF8F923240286900085FFE8 /* Lanuch.storyboard in Resources */,
 				2FADB12423FFA92F007D29E5 /* LICENSE in Resources */,
+				2FD8DF9A242C816B004C5A92 /* Story.storyboard in Resources */,
 				2FFA5148240FAA0C0032396D /* Region.storyboard in Resources */,
 				2F8E0106240CA0FE00A13810 /* MainViewController.xib in Resources */,
 				2F8E011A240D37D900A13810 /* LocationHomeTableViewCell.xib in Resources */,
@@ -889,6 +920,7 @@
 				2FFA51582418D7A30032396D /* Archive.storyboard in Resources */,
 				2F8E010E240CA5A300A13810 /* LocationHomeViewController.xib in Resources */,
 				2F2C3BE623E089CC0025A390 /* Login.storyboard in Resources */,
+				2FD8DF97242C6A96004C5A92 /* AudioRecorderViewController.xib in Resources */,
 				2FF8F91D240279500085FFE8 /* Assets.xcassets in Resources */,
 				2FADB12923FFA92F007D29E5 /* YPVideoFiltersVC.xib in Resources */,
 			);
@@ -1026,8 +1058,10 @@
 				2FE6E9352402255800294B51 /* ProfileStoryCell.swift in Sources */,
 				2FFA51502410A7D40032396D /* PrivateRegion.swift in Sources */,
 				2FADB13823FFA92F007D29E5 /* YPLibrarySelection.swift in Sources */,
+				2FD8DF9C242DE423004C5A92 /* ReviewAlbumViewController.swift in Sources */,
 				2FE6E9242401402C00294B51 /* PrivacyCell.swift in Sources */,
 				2FADB14623FFA92F007D29E5 /* YPGridView.swift in Sources */,
+				2FD8DF94242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift in Sources */,
 				2FFA514E240FB1210032396D /* HotRegion.swift in Sources */,
 				2FADB14D23FFA92F007D29E5 /* YPBottomPager.swift in Sources */,
 				2FFA51542411011B0032396D /* HotRegionHistoryCell.swift in Sources */,
@@ -1053,6 +1087,7 @@
 				2FADB17023FFA92F007D29E5 /* AVCaptureSession+Extensions.swift in Sources */,
 				2FADB13023FFA92F007D29E5 /* YPPickerVC.swift in Sources */,
 				2FADB12C23FFA92F007D29E5 /* YPPhotoFiltersVC.swift in Sources */,
+				2FD8DF8E24231C1F004C5A92 /* History.swift in Sources */,
 				2FADB16F23FFA92F007D29E5 /* AVFileType+Extensions.swift in Sources */,
 				2FADB15A23FFA92F007D29E5 /* PostiOS10PhotoCapture.swift in Sources */,
 				2FFA51642418DB250032396D /* RecentView.swift in Sources */,
@@ -1067,6 +1102,7 @@
 				2FADB13623FFA92F007D29E5 /* YPIcons.swift in Sources */,
 				2FADB16E23FFA92F007D29E5 /* CGRect+Extensions.swift in Sources */,
 				2FADB12E23FFA92F007D29E5 /* YPFilterCollectionViewCell.swift in Sources */,
+				2FD8DFA6242F508F004C5A92 /* ReviewAlbumTitleCell.swift in Sources */,
 				2FADB13723FFA92F007D29E5 /* YPImagePicker.swift in Sources */,
 				2FADB12D23FFA92F007D29E5 /* YPFiltersView.swift in Sources */,
 				2F93242E23FE65D3009B7C7F /* CustomMarkerView.swift in Sources */,
@@ -1075,11 +1111,13 @@
 				2FE6E92024013E3C00294B51 /* StoryPrivacyCell.swift in Sources */,
 				2FE6E91E24013D3500294B51 /* StoryLocationCell.swift in Sources */,
 				2FADB13223FFA92F007D29E5 /* YPImagePickerConfiguration.swift in Sources */,
+				2FD8DF90242B1F39004C5A92 /* ArchiveWatchTextViewController.swift in Sources */,
 				2FFA5156241101ED0032396D /* RegionHistory.swift in Sources */,
 				2FADB13523FFA92F007D29E5 /* YPPickerScreen.swift in Sources */,
 				2FADB18D240115C6007D29E5 /* SettingActivityTableViewController.swift in Sources */,
 				2FADB15123FFA92F007D29E5 /* LibraryMediaManager.swift in Sources */,
 				2FADB17D23FFCCF8007D29E5 /* StoryReviewViewController.swift in Sources */,
+				2FD8DFA0242DE4D3004C5A92 /* SelectedPhoto.swift in Sources */,
 				2FE6E93B24023C3F00294B51 /* UserProfile.swift in Sources */,
 				2FADB12B23FFA92F007D29E5 /* YPCropVC.swift in Sources */,
 				2F8E0113240D023200A13810 /* MapHomeViewController.swift in Sources */,
@@ -1095,11 +1133,13 @@
 				2FADB14123FFA92F007D29E5 /* YPVideoCaptureVC.swift in Sources */,
 				2FADB16A23FFA92F007D29E5 /* NSFileManager+Extensions.swift in Sources */,
 				2FADB14C23FFA92F007D29E5 /* YPMenuItem.swift in Sources */,
+				2FD8DF9E242DE451004C5A92 /* ReviewAlbumCell.swift in Sources */,
 				2FE6E92C2401A26800294B51 /* SettingReportViewController.swift in Sources */,
 				2FADB16D23FFA92F007D29E5 /* PHFetchResult+Extensions.swift in Sources */,
 				2FADB18124001B46007D29E5 /* User.swift in Sources */,
 				2FE6E93724022F9D00294B51 /* SettingTouchIDViewController.swift in Sources */,
 				2FB2E49123FACED500E15A81 /* HomeViewController.swift in Sources */,
+				2FD8DF98242C6A96004C5A92 /* AudioRecorderViewController.swift in Sources */,
 				2FB2E49323FACEED00E15A81 /* ArchiveViewController.swift in Sources */,
 				2FADB13C23FFA92F007D29E5 /* YPTrimError.swift in Sources */,
 				2FADB13A23FFA92F007D29E5 /* YPDragDirection.swift in Sources */,

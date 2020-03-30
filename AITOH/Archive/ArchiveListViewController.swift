@@ -80,10 +80,47 @@ extension ArchiveListViewController: UITableViewDataSource, UITableViewDelegate{
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let vc = storyboard?.instantiateViewController(identifier: "ArchiveWatchViewController") as? ArchiveWatchViewController
-        vc?.id = archives[indexPath.row].historyId
-        self.navigationController?.pushViewController(vc!, animated: true)
+        
+        let historyId = archives[indexPath.row].historyId
+        let userId = UserDefaults.standard.string(forKey: "userId")
+        let history:History
+        guard let getArchiveURL = URL(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/archive?userId=" + userId! + "&historyId=" + String(historyId)) else { return }
+        
+        print(getArchiveURL)
+        AF.request(getArchiveURL).validate().responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+             let json = JSON(value)
+             print(json)
+             let history = History(json: json)
+             print("Click archive")
+             
+             if history.historyMediaPath == "" || history.historyMediaPath == " "{
+                let  vc = (self.storyboard?.instantiateViewController(identifier: "ArchiveWatchTextViewController") as? ArchiveWatchTextViewController)!
+                vc.history = history
+                self.present(vc, animated: true, completion: nil)
+             }else if history.mediaTypeId == 1{
+                let vc = (self.storyboard?.instantiateViewController(identifier: "ArchiveWatchViewController") as? ArchiveWatchViewController)!
+                vc.history = history
+                self.present(vc, animated: true, completion: nil)
+             }else{
+                let vc = (self.storyboard?.instantiateViewController(identifier: "ArchiveWatchVideoViewController") as? ArchiveWatchVideoViewController)!
+                vc.history = history
+                self.present(vc, animated: true, completion: nil)
+             }
+             
+             
+            
+             break
+                
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+        
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100

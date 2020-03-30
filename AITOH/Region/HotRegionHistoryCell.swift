@@ -24,6 +24,9 @@ class HotRegionHistoryCell: UICollectionViewCell {
         title.text = region.username
         subtitle.text = region.date + " in " + region.location
         des.text = region.desc
+        let url = URL(string: region.userImagePath)
+        icon.downloadImage(from: url!)
+        icon.round()
         if(region.historyImagePath != "" && URL(string: region.historyImagePath) != nil){
             let url = URL(string: region.historyImagePath)
             image.downloadImage(from: url!)

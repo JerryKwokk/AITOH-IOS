@@ -10,14 +10,37 @@ import UIKit
 
 class AlbumListViewController: UIViewController {
 
+    var config = YPImagePickerConfiguration()
     var albums: [Album] = []
+    var time = 0
     @IBOutlet weak var tableView: UITableView!
+    lazy var refeshControl: UIRefreshControl = {
+        let refeshControl = UIRefreshControl()
+        refeshControl.tintColor = .gray
+        refeshControl.addTarget(self, action: #selector(requestData), for: .valueChanged)
+        return refeshControl
+    }()
     override func viewDidLoad() {
+        tableView.refreshControl = refeshControl
         super.viewDidLoad()
         print("load")
         albums = createArray()
         print(albums.count)
+        
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func requestData(){
+        print("refesh data")
+        let refeshDead = DispatchTime.now() + .milliseconds(1100)
+        DispatchQueue.main.asyncAfter(deadline: refeshDead){
+            self.refeshControl.endRefreshing()
+            if(self.time == 0){
+                self.updateAF()
+                self.time+=1
+            }
+            self.tableView.reloadData()
+        }
     }
     
     func createArray() -> [Album]{
@@ -31,10 +54,56 @@ class AlbumListViewController: UIViewController {
         return [album1, album2]
         
     }
+    
+    func updateAF(){
+        /*
+         AF.request()
+         
+         
+         */
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy"
+        let newAlbum = Album(id: "4", title: "New Album", bgImage: UIImage(named: "Google")!, imagePath: "", count: 2, create_date: formatter.string(from: date))
+        albums.insert(newAlbum, at: 0)
+    }
     @IBAction func btnCancelClick(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion:nil)
     }
     
+    @IBAction func NewAlbumClick(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Story", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "ReviewAlbumViewController") as? ReviewAlbumViewController
+        config.isScrollToChangeModesEnabled = true
+        config.library.isSquareByDefault = false
+        config.onlySquareImagesFromCamera = false
+        config.usesFrontCamera = true
+        config.showsPhotoFilters = false
+        config.showsVideoTrimmer = true
+        config.shouldSaveNewPicturesToAlbum = true
+        config.albumName = "DefaultYPImagePickerAlbumName"
+        config.startOnScreen = YPPickerScreen.photo
+        config.screens = [.library]
+        config.showsCrop = .none
+        config.targetImageSize = YPImageSize.original
+        config.overlayView = UIView()
+        config.hidesStatusBar = false
+        config.hidesBottomBar = true
+        config.library.maxNumberOfItems = 20
+        config.preferredStatusBarStyle = UIStatusBarStyle.darkContent
+        config.maxCameraZoomFactor = 1.0
+        config.library.skipSelectionsGallery = true
+        
+        let picker = YPImagePicker(configuration: config)
+        picker.didFinishPicking { [unowned picker] items, cancelled in
+            vc?.items = items
+            picker.dismiss(animated: true, completion: nil)
+            
+            self.navigationController?.pushViewController(vc!, animated: true)
+        }
+        present(picker, animated: true, completion: nil)
+        // Do any additional setup after loading the view.
+    }
     /*
     // MARK: - Navigation
 

@@ -18,6 +18,7 @@ class PrivateGroupTableViewCell: UITableViewCell {
     func initCommit(region: PrivateRegion){
         title.text = region.name
         subtitle.isHidden = true
+        print("region " + region.imagePath)
         let url = URL(string: region.imagePath)
         icon.downloadImage(from: url!)
         icon.round()

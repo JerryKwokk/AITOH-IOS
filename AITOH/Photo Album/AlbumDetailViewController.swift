@@ -8,10 +8,13 @@
 
 import UIKit
 import Alamofire
+import SKPhotoBrowser
 
 class AlbumDetailViewController: UIViewController {
     var album:Album!
     var photos: [AlbumPhoto] = []
+    var images = [SKPhoto]()
+    let photo = SKPhoto.photoWithImage(UIImage())
     @IBOutlet weak var mainPhoto: UIImageView!
     @IBOutlet weak var subtitle: UILabel!
     @IBOutlet weak var photoTitle: UILabel!
@@ -31,7 +34,10 @@ class AlbumDetailViewController: UIViewController {
         subtitle.text = String(album.count) + " items, update " + album.create_date
         let rightBarButton = UIBarButtonItem(image: UIImage(named: "baseline_landscape_black_18dp-1"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(AlbumDetailViewController.mapModeClick))
         self.navigationItem.rightBarButtonItem = rightBarButton
-
+        for photo in photos{
+            let uiImage = SKPhoto.photoWithImage(photo.image)
+            images.append(uiImage)
+        }
         
         
     }
@@ -39,6 +45,7 @@ class AlbumDetailViewController: UIViewController {
     @objc func mapModeClick(_ sender:UIBarButtonItem!)
     {
          let vc = storyboard?.instantiateViewController(identifier: "MapModeViewController") as? MapModeViewController
+         vc?.album = album
          self.navigationController?.pushViewController(vc!, animated: true)
     }
 
@@ -96,6 +103,12 @@ extension AlbumDetailViewController: UICollectionViewDataSource, UICollectionVie
         cell.setAlbumPhoto(albumPhoto: photo)
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(indexPath.row)
+        present(browser, animated: true, completion: {})
     }
     
 }

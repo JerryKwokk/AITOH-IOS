@@ -15,6 +15,7 @@ pod 'YPImagePicker'
 pod 'PageMenu'
 pod 'SKPhotoBrowser'
 pod 'AWSS3'
+pod 'MessengerKit', :git => 'https://github.com/steve228uk/MessengerKit.git'
 
 use_frameworks!
 end

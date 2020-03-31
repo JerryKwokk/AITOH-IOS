@@ -149,6 +149,8 @@
 		2FD8DF9E242DE451004C5A92 /* ReviewAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF9D242DE451004C5A92 /* ReviewAlbumCell.swift */; };
 		2FD8DFA0242DE4D3004C5A92 /* SelectedPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF9F242DE4D3004C5A92 /* SelectedPhoto.swift */; };
 		2FD8DFA6242F508F004C5A92 /* ReviewAlbumTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFA5242F508F004C5A92 /* ReviewAlbumTitleCell.swift */; };
+		2FD8DFB024331DE9004C5A92 /* ChatroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFAF24331DE9004C5A92 /* ChatroomViewController.swift */; };
+		2FD8DFB42433208D004C5A92 /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFB32433208D004C5A92 /* ChatUser.swift */; };
 		2FE6E91A24012CDE00294B51 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91924012CDE00294B51 /* Device.swift */; };
 		2FE6E91C24013B3B00294B51 /* StoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */; };
 		2FE6E91E24013D3500294B51 /* StoryLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */; };
@@ -349,6 +351,8 @@
 		2FD8DF9D242DE451004C5A92 /* ReviewAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAlbumCell.swift; sourceTree = "<group>"; };
 		2FD8DF9F242DE4D3004C5A92 /* SelectedPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPhoto.swift; sourceTree = "<group>"; };
 		2FD8DFA5242F508F004C5A92 /* ReviewAlbumTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAlbumTitleCell.swift; sourceTree = "<group>"; };
+		2FD8DFAF24331DE9004C5A92 /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
+		2FD8DFB32433208D004C5A92 /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		2FE6E91924012CDE00294B51 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryMainCell.swift; sourceTree = "<group>"; };
 		2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryLocationCell.swift; sourceTree = "<group>"; };
@@ -441,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				2F2C3BDE23E089CC0025A390 /* AppDelegate.swift */,
+				2FD8DFAE24331DA7004C5A92 /* Chat */,
 				2FB2E48E23FA79CE00E15A81 /* TabViewController.swift */,
 				2FB2E4C423FD5BA200E15A81 /* Story */,
 				2FB2E4C223FD5B3D00E15A81 /* Archive */,
@@ -707,6 +712,7 @@
 				2FFA51632418DB250032396D /* RecentView.swift */,
 				2FD8DF8D24231C1F004C5A92 /* History.swift */,
 				2FD8DF9F242DE4D3004C5A92 /* SelectedPhoto.swift */,
+				2FD8DFB32433208D004C5A92 /* ChatUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -814,6 +820,14 @@
 				2FADB17E24001113007D29E5 /* ReviewTableCell.swift */,
 			);
 			path = Story;
+			sourceTree = "<group>";
+		};
+		2FD8DFAE24331DA7004C5A92 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				2FD8DFAF24331DE9004C5A92 /* ChatroomViewController.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		2FFA5146240FA9D70032396D /* Region */ = {
@@ -1096,6 +1110,7 @@
 				2FB2E48D23F9814400E15A81 /* SignUpVIewControllerViewController.swift in Sources */,
 				2FADB17823FFA92F007D29E5 /* YPLoaders.swift in Sources */,
 				2FADB16823FFA92F007D29E5 /* PHCachingImageManager+Extensions.swift in Sources */,
+				2FD8DFB42433208D004C5A92 /* ChatUser.swift in Sources */,
 				2FADB15C23FFA92F007D29E5 /* YPCameraVC.swift in Sources */,
 				2FE6E91A24012CDE00294B51 /* Device.swift in Sources */,
 				2FADB18924010A7C007D29E5 /* Story.swift in Sources */,
@@ -1117,6 +1132,7 @@
 				2FADB18D240115C6007D29E5 /* SettingActivityTableViewController.swift in Sources */,
 				2FADB15123FFA92F007D29E5 /* LibraryMediaManager.swift in Sources */,
 				2FADB17D23FFCCF8007D29E5 /* StoryReviewViewController.swift in Sources */,
+				2FD8DFB024331DE9004C5A92 /* ChatroomViewController.swift in Sources */,
 				2FD8DFA0242DE4D3004C5A92 /* SelectedPhoto.swift in Sources */,
 				2FE6E93B24023C3F00294B51 /* UserProfile.swift in Sources */,
 				2FADB12B23FFA92F007D29E5 /* YPCropVC.swift in Sources */,

@@ -9,6 +9,8 @@
 import UIKit
 import LocalAuthentication
 import GoogleMaps
+import ApiAI
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         checkLogged()
         GMSServices.provideAPIKey("AIzaSyAimlTXyfphlB_CrEn2eD4dPVICemeoIYk")
+        let configuration = AIDefaultConfiguration()
+        configuration.clientAccessToken = "ff108b2d831140f6807c967b051a859d"
+        print(configuration.clientAccessToken)
+        let apiai = ApiAI.shared()
+        apiai?.configuration = configuration
+        
         // Override point for customization after application launch.
         return true
     }

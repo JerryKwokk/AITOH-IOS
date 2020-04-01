@@ -148,6 +148,8 @@ class LoginViewController: UIViewController {
 
                                         //傳至下一頁面
                             
+                           }else{
+                            self.lblErrorMess.isHidden = false
                            }
                            break
                        case .failure(let error):

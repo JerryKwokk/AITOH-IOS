@@ -21,9 +21,11 @@ class ChatroomViewController: MSGMessengerViewController {
          let owner = ChatUser(displayName: UserDefaults.standard.string(forKey: "username")!, avatar: #imageLiteral(resourceName: "outline_person_black_24pt_1x"), avatarUrl: nil, isSender: true)
          
          var adminMessage:MSGMessage!
-          var id = 100
-          var adminRequest:Bool = false
-          override var style: MSGMessengerStyle {
+         var id = 100
+         var insertId:Int = 0
+         var chatroomId:Int = -1
+         var adminRequest:Bool = false
+         override var style: MSGMessengerStyle {
             var style = MessengerKit.Styles.iMessage
               style.headerHeight = 0
       //        style.inputPlaceholder = "Message"
@@ -124,7 +126,22 @@ class ChatroomViewController: MSGMessengerViewController {
                 self.id+=1
                 let message = MSGMessage(id: self.id, body: body, user: self.owner, sentAt: Date())
                 print(resText)
-                
+                AF.request(URL.init(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/chat")!, method: .post, parameters: ["userId":UserDefaults.standard.string(forKey: "userId")! ,"content": text, "response": resText, "chatroomId": self.chatroomId, "recevier": 1050], encoding: JSONEncoding.default).responseJSON { (response) in
+
+                    switch response.result {
+                    case .success(let value):
+                        let json = JSON(value)
+                        print(json)
+                        self.insertId = json["insertId"].intValue
+                        if(json["chatroomId"].intValue != -1){
+                            self.chatroomId = json["chatroomId"].intValue
+                        }
+                        break
+                    case .failure(let error):
+                        print(error)
+                        break
+                    }
+                }
                 self.insert(message)
                 if(resText == "OK, I was connecting the AITOH Administrator, please wait...."){
                     self.adminRequest = true
@@ -135,12 +152,12 @@ class ChatroomViewController: MSGMessengerViewController {
             }else{
                 let message = MSGMessage(id: self.id, body: body, user: self.owner, sentAt: Date())
                 self.insert(message)
-                AF.request(URL.init(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/chat")!, method: .post, parameters: ["userId":UserDefaults.standard.string(forKey: "userId")! ,"content": text], encoding: JSONEncoding.default).responseJSON { (response) in
+                AF.request(URL.init(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/chat")!, method: .post, parameters: ["userId":UserDefaults.standard.string(forKey: "userId")! ,"content": text, "response": "null", "chatroomId": self.chatroomId, "recevier": 1057], encoding: JSONEncoding.default).responseJSON { (response) in
 
                     switch response.result {
                     case .success(let value):
                         let json = JSON(value)
-                        print(json)
+                        self.insertId = json["insertId"].intValue
                         break
                     case .failure(let error):
                         print(error)

@@ -63,10 +63,16 @@ class LoginViewController: UIViewController {
             self.gradientView.transform = CGAffineTransform(translationX: x, y: 0)})
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
         super.viewWillDisappear(animated)
-    } 
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     
     func loadUi(){
         animateBackgrounfColor()

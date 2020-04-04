@@ -151,6 +151,8 @@
 		2FD8DFA6242F508F004C5A92 /* ReviewAlbumTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFA5242F508F004C5A92 /* ReviewAlbumTitleCell.swift */; };
 		2FD8DFB024331DE9004C5A92 /* ChatroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFAF24331DE9004C5A92 /* ChatroomViewController.swift */; };
 		2FD8DFB42433208D004C5A92 /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFB32433208D004C5A92 /* ChatUser.swift */; };
+		2FD8DFB8243865B9004C5A92 /* Passcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD8DFB7243865B9004C5A92 /* Passcode.storyboard */; };
+		2FD8DFBA24386606004C5A92 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFB924386606004C5A92 /* PasscodeViewController.swift */; };
 		2FE6E91A24012CDE00294B51 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91924012CDE00294B51 /* Device.swift */; };
 		2FE6E91C24013B3B00294B51 /* StoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */; };
 		2FE6E91E24013D3500294B51 /* StoryLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */; };
@@ -353,6 +355,8 @@
 		2FD8DFA5242F508F004C5A92 /* ReviewAlbumTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAlbumTitleCell.swift; sourceTree = "<group>"; };
 		2FD8DFAF24331DE9004C5A92 /* ChatroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatroomViewController.swift; sourceTree = "<group>"; };
 		2FD8DFB32433208D004C5A92 /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
+		2FD8DFB7243865B9004C5A92 /* Passcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Passcode.storyboard; sourceTree = "<group>"; };
+		2FD8DFB924386606004C5A92 /* PasscodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
 		2FE6E91924012CDE00294B51 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryMainCell.swift; sourceTree = "<group>"; };
 		2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryLocationCell.swift; sourceTree = "<group>"; };
@@ -447,6 +451,7 @@
 				2F2C3BDE23E089CC0025A390 /* AppDelegate.swift */,
 				2FD8DFAE24331DA7004C5A92 /* Chat */,
 				2FB2E48E23FA79CE00E15A81 /* TabViewController.swift */,
+				2FD8DFB924386606004C5A92 /* PasscodeViewController.swift */,
 				2FB2E4C423FD5BA200E15A81 /* Story */,
 				2FB2E4C223FD5B3D00E15A81 /* Archive */,
 				2FB2E4C123FD5B2300E15A81 /* Acitivity */,
@@ -464,6 +469,7 @@
 				2FFA51572418D7A30032396D /* Archive.storyboard */,
 				2FF8F922240286900085FFE8 /* Lanuch.storyboard */,
 				2FD8DF99242C816B004C5A92 /* Story.storyboard */,
+				2FD8DFB7243865B9004C5A92 /* Passcode.storyboard */,
 			);
 			path = AITOH;
 			sourceTree = "<group>";
@@ -936,6 +942,7 @@
 				2F2C3BE623E089CC0025A390 /* Login.storyboard in Resources */,
 				2FD8DF97242C6A96004C5A92 /* AudioRecorderViewController.xib in Resources */,
 				2FF8F91D240279500085FFE8 /* Assets.xcassets in Resources */,
+				2FD8DFB8243865B9004C5A92 /* Passcode.storyboard in Resources */,
 				2FADB12923FFA92F007D29E5 /* YPVideoFiltersVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1164,6 +1171,7 @@
 				2FB2E4B923FD30A900E15A81 /* AlbumListViewController.swift in Sources */,
 				2FADB16723FFA92F007D29E5 /* UIImage+Extensions.swift in Sources */,
 				2FADB17623FFA92F007D29E5 /* YPPhotoSaver.swift in Sources */,
+				2FD8DFBA24386606004C5A92 /* PasscodeViewController.swift in Sources */,
 				2FADB15223FFA92F007D29E5 /* YPAssetViewContainer.swift in Sources */,
 				2FB2E49E23FBAB5800E15A81 /* UIButton.swift in Sources */,
 			);

@@ -16,6 +16,7 @@ pod 'PageMenu'
 pod 'SKPhotoBrowser'
 pod 'AWSS3'
 pod 'ApiAI'
+pod 'SmileLock'
 pod 'MessengerKit', :git => 'https://github.com/steve228uk/MessengerKit.git'
 
 use_frameworks!

@@ -8,35 +8,106 @@
 
 import UIKit
 
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options 
+        connectionOptions: UIScene.ConnectionOptions) {
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+
+               self.window = UIWindow(windowScene: windowScene)
+               //self.window =  UIWindow(frame: UIScreen.main.bounds)
+               if UserDefaults.standard.value(forKey: "username") != nil && UserDefaults.standard.value(forKey: "userId") != nil {
+                if(UserDefaults.standard.value(forKey: "passcode") != nil){
+                   let storyboard = UIStoryboard(name: "Passcode", bundle: nil)
+                   guard let rootVC = storyboard.instantiateViewController(identifier: "PasscodeViewController") as? PasscodeViewController else {
+                       print("ViewController not found")
+                       return
+                   }
+                    let rootNC = UINavigationController(rootViewController: rootVC)
+                                  self.window?.rootViewController = rootNC
+                                  self.window?.makeKeyAndVisible()
+                }else{
+                    let storyboard = UIStoryboard(name: "Passcode", bundle: nil)
+                                      guard let rootVC = storyboard.instantiateViewController(identifier: "TabViewController") as? TabViewController else {
+                                          print("ViewController not found")
+                                          return
+                                      }
+                    let rootNC = UINavigationController(rootViewController: rootVC)
+                                  self.window?.rootViewController = rootNC
+                                  self.window?.makeKeyAndVisible()
+                }
+               }else{
+                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                guard let rootVC = storyboard.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else {
+                    print("ViewController not found")
+                    return
+                }
+                let rootNC = UINavigationController(rootViewController: rootVC)
+                              self.window?.rootViewController = rootNC
+                              self.window?.makeKeyAndVisible()
+                
+               }
+              
+        
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        window?.windowScene = windowScene
+       // window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+       // window?.windowScene = windowScene
 
-        self.loadBaseController()
+        
+        // If this scene's self.window is nil then set a new UIWindow object to it.
+      /*  self.window = self.window ?? UIWindow()
+            
+        // Set this scene's window's background color.
+        self.window!.backgroundColor = UIColor.white
+        
+        if UserDefaults.standard.value(forKey: "username") == nil || UserDefaults.standard.value(forKey: "userId") == nil {
+            self.window!.rootViewController = LoginViewController()
+        }else{
+            print(UserDefaults.standard.string(forKey: "passcode"))
+            if UserDefaults.standard.value(forKey: "passcode") != nil {
+                self.window!.rootViewController = PasscodeViewController()
+            }else{
+                self.window!.rootViewController = HomeViewController()
+            }
+        }
+        // Create a ViewController object and set it as the scene's window's root view controller.
+        
+        // Make this scene's window be visible.
+        self.window!.makeKeyAndVisible()
+        
+        guard let _ = (scene as? UIWindowScene) else { return }
+    }*/
     }
     
-    func loadBaseController() {
+    /*func loadBaseController() {
        let storyboard : UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-       guard let window = self.window else { return }
-       window.makeKeyAndVisible()
+       self.window = self.window ?? UIWindow()
+       
        if UserDefaults.standard.value(forKey: "username") == nil || UserDefaults.standard.value(forKey: "userId") == nil {
+        if(UserDefaults.standard.value(forKey: "passcode") != nil){
+            print("Scene True")
+            let passcodeStorybaord: UIStoryboard = UIStoryboard(name: "Passcode", bundle: nil)
+            let passcodeVC: PasscodeViewController = passcodeStorybaord.instantiateViewController(withIdentifier: "PasscodeViewController") as! PasscodeViewController
+            self.window?.rootViewController = passcodeVC
+        }else{
            let loginVC: LoginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
            self.window?.rootViewController = loginVC
+        }
        } else {
            let homeVC: TabViewController = storyboard.instantiateViewController(withIdentifier: "TabViewController") as! TabViewController
            let navigationHomeVC = UINavigationController(rootViewController: homeVC)
            self.window?.rootViewController = navigationHomeVC
        }
         self.window?.makeKeyAndVisible()
-    }
+        
+    }*/
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
@@ -58,6 +129,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+          if(UserDefaults.standard.value(forKey: "passcode") != nil){
+                         let storyboard = UIStoryboard(name: "Passcode", bundle: nil)
+                         guard let rootVC = storyboard.instantiateViewController(identifier: "PasscodeViewController") as? PasscodeViewController else {
+                             print("ViewController not found")
+                             return
+                         }
+                          let rootNC = UINavigationController(rootViewController: rootVC)
+                                        self.window?.rootViewController = rootNC
+                                        self.window?.makeKeyAndVisible()
+        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {

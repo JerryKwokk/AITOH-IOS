@@ -145,6 +145,18 @@ class ChatroomViewController: MSGMessengerViewController {
                 self.insert(message)
                 if(resText == "OK, I was connecting the AITOH Administrator, please wait...."){
                     self.adminRequest = true
+                    AF.request(URL.init(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/chat")!, method: .put, parameters: ["chatroomId": self.chatroomId, "admin": true], encoding: JSONEncoding.default).responseJSON { (response) in
+                    switch response.result {
+                                       case .success(let value):
+                                           let json = JSON(value)
+                                           print(json)
+                                           break
+                                       case .failure(let error):
+                                           print(error)
+                                           break
+                                       }
+                                   }
+                
                 }
             }
                 

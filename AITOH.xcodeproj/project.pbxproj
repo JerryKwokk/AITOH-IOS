@@ -153,6 +153,19 @@
 		2FD8DFB42433208D004C5A92 /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFB32433208D004C5A92 /* ChatUser.swift */; };
 		2FD8DFB8243865B9004C5A92 /* Passcode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD8DFB7243865B9004C5A92 /* Passcode.storyboard */; };
 		2FD8DFBA24386606004C5A92 /* PasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFB924386606004C5A92 /* PasscodeViewController.swift */; };
+		2FD8DFBC24399923004C5A92 /* RegionGroupSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFBB24399923004C5A92 /* RegionGroupSearchViewController.swift */; };
+		2FD8DFC024399A0B004C5A92 /* ReginGroupSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFBF24399A0B004C5A92 /* ReginGroupSearchCell.swift */; };
+		2FD8DFC224399AC9004C5A92 /* RegionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFC124399AC9004C5A92 /* RegionGroup.swift */; };
+		2FD8DFC4243C66E0004C5A92 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFC3243C66E0004C5A92 /* GroupViewController.swift */; };
+		2FD8DFC6243C6CC2004C5A92 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFC5243C6CC2004C5A92 /* RadioButton.swift */; };
+		2FD8DFC8243C6D35004C5A92 /* RadioButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFC7243C6D35004C5A92 /* RadioButtonController.swift */; };
+		2FD8DFCA243C719E004C5A92 /* CreateRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFC9243C719E004C5A92 /* CreateRegionViewController.swift */; };
+		2FD8DFD0243C7759004C5A92 /* RegionGroupBackgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFCF243C7758004C5A92 /* RegionGroupBackgroundCell.swift */; };
+		2FD8DFD2243C7771004C5A92 /* RegionGroupTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFD1243C7771004C5A92 /* RegionGroupTitleCell.swift */; };
+		2FD8DFD4243C7784004C5A92 /* RegionGroupNewHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFD3243C7784004C5A92 /* RegionGroupNewHistoryCell.swift */; };
+		2FD8DFD8243C7E92004C5A92 /* RegionGroupHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFD7243C7E92004C5A92 /* RegionGroupHistoryCell.swift */; };
+		2FD8DFDA243CA8ED004C5A92 /* SuggestedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFD9243CA8ED004C5A92 /* SuggestedUser.swift */; };
+		2FD8DFDC243CB489004C5A92 /* CreateRegionSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFDB243CB489004C5A92 /* CreateRegionSearchCell.swift */; };
 		2FE6E91A24012CDE00294B51 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91924012CDE00294B51 /* Device.swift */; };
 		2FE6E91C24013B3B00294B51 /* StoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */; };
 		2FE6E91E24013D3500294B51 /* StoryLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */; };
@@ -174,7 +187,6 @@
 		2FFA5148240FAA0C0032396D /* Region.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFA5147240FAA0C0032396D /* Region.storyboard */; };
 		2FFA514A240FAB810032396D /* RegionGroupDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA5149240FAB810032396D /* RegionGroupDashboardViewController.swift */; };
 		2FFA514C240FB01B0032396D /* HotRegionGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA514B240FB01B0032396D /* HotRegionGroupCell.swift */; };
-		2FFA514E240FB1210032396D /* HotRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA514D240FB1210032396D /* HotRegion.swift */; };
 		2FFA51502410A7D40032396D /* PrivateRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA514F2410A7D40032396D /* PrivateRegion.swift */; };
 		2FFA51522410E09C0032396D /* PrivateGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA51512410E09C0032396D /* PrivateGroupTableViewCell.swift */; };
 		2FFA51542411011B0032396D /* HotRegionHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFA51532411011B0032396D /* HotRegionHistoryCell.swift */; };
@@ -357,6 +369,19 @@
 		2FD8DFB32433208D004C5A92 /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		2FD8DFB7243865B9004C5A92 /* Passcode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Passcode.storyboard; sourceTree = "<group>"; };
 		2FD8DFB924386606004C5A92 /* PasscodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewController.swift; sourceTree = "<group>"; };
+		2FD8DFBB24399923004C5A92 /* RegionGroupSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionGroupSearchViewController.swift; sourceTree = "<group>"; };
+		2FD8DFBF24399A0B004C5A92 /* ReginGroupSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReginGroupSearchCell.swift; sourceTree = "<group>"; };
+		2FD8DFC124399AC9004C5A92 /* RegionGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionGroup.swift; sourceTree = "<group>"; };
+		2FD8DFC3243C66E0004C5A92 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		2FD8DFC5243C6CC2004C5A92 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		2FD8DFC7243C6D35004C5A92 /* RadioButtonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonController.swift; sourceTree = "<group>"; };
+		2FD8DFC9243C719E004C5A92 /* CreateRegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRegionViewController.swift; sourceTree = "<group>"; };
+		2FD8DFCF243C7758004C5A92 /* RegionGroupBackgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionGroupBackgroundCell.swift; sourceTree = "<group>"; };
+		2FD8DFD1243C7771004C5A92 /* RegionGroupTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionGroupTitleCell.swift; sourceTree = "<group>"; };
+		2FD8DFD3243C7784004C5A92 /* RegionGroupNewHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionGroupNewHistoryCell.swift; sourceTree = "<group>"; };
+		2FD8DFD7243C7E92004C5A92 /* RegionGroupHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionGroupHistoryCell.swift; sourceTree = "<group>"; };
+		2FD8DFD9243CA8ED004C5A92 /* SuggestedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedUser.swift; sourceTree = "<group>"; };
+		2FD8DFDB243CB489004C5A92 /* CreateRegionSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRegionSearchCell.swift; sourceTree = "<group>"; };
 		2FE6E91924012CDE00294B51 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryMainCell.swift; sourceTree = "<group>"; };
 		2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryLocationCell.swift; sourceTree = "<group>"; };
@@ -378,7 +403,6 @@
 		2FFA5147240FAA0C0032396D /* Region.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Region.storyboard; sourceTree = "<group>"; };
 		2FFA5149240FAB810032396D /* RegionGroupDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionGroupDashboardViewController.swift; sourceTree = "<group>"; };
 		2FFA514B240FB01B0032396D /* HotRegionGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotRegionGroupCell.swift; sourceTree = "<group>"; };
-		2FFA514D240FB1210032396D /* HotRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotRegion.swift; sourceTree = "<group>"; };
 		2FFA514F2410A7D40032396D /* PrivateRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateRegion.swift; sourceTree = "<group>"; };
 		2FFA51512410E09C0032396D /* PrivateGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateGroupTableViewCell.swift; sourceTree = "<group>"; };
 		2FFA51532411011B0032396D /* HotRegionHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotRegionHistoryCell.swift; sourceTree = "<group>"; };
@@ -694,7 +718,9 @@
 				2FADB18A24011447007D29E5 /* UIDevice.swift */,
 				2FB2E49B23FBA9DE00E15A81 /* UIImageView.swift */,
 				2FB2E49D23FBAB5800E15A81 /* UIButton.swift */,
+				2FD8DFC7243C6D35004C5A92 /* RadioButtonController.swift */,
 				2FE6E9302401BF8300294B51 /* UITextField.swift */,
+				2FD8DFC5243C6CC2004C5A92 /* RadioButton.swift */,
 			);
 			path = UIVIew;
 			sourceTree = "<group>";
@@ -707,11 +733,12 @@
 				2FB2E4C723FD68CD00E15A81 /* AlbumPhoto.swift */,
 				2F93243123FE6748009B7C7F /* PhotoPlace.swift */,
 				2F8E011D240D467C00A13810 /* Region.swift */,
+				2FD8DFC124399AC9004C5A92 /* RegionGroup.swift */,
 				2FADB18824010A7C007D29E5 /* Story.swift */,
 				2FE6E91924012CDE00294B51 /* Device.swift */,
 				2FE6E9252401413500294B51 /* Privacy.swift */,
+				2FD8DFD9243CA8ED004C5A92 /* SuggestedUser.swift */,
 				2FE6E93A24023C3F00294B51 /* UserProfile.swift */,
-				2FFA514D240FB1210032396D /* HotRegion.swift */,
 				2FFA514F2410A7D40032396D /* PrivateRegion.swift */,
 				2FFA5155241101ED0032396D /* RegionHistory.swift */,
 				2FFA51652418DB540032396D /* Archive.swift */,
@@ -840,8 +867,17 @@
 			isa = PBXGroup;
 			children = (
 				2FFA5149240FAB810032396D /* RegionGroupDashboardViewController.swift */,
+				2FD8DFBB24399923004C5A92 /* RegionGroupSearchViewController.swift */,
+				2FD8DFC3243C66E0004C5A92 /* GroupViewController.swift */,
+				2FD8DFD7243C7E92004C5A92 /* RegionGroupHistoryCell.swift */,
+				2FD8DFCF243C7758004C5A92 /* RegionGroupBackgroundCell.swift */,
+				2FD8DFD1243C7771004C5A92 /* RegionGroupTitleCell.swift */,
 				2FFA514B240FB01B0032396D /* HotRegionGroupCell.swift */,
 				2FFA51512410E09C0032396D /* PrivateGroupTableViewCell.swift */,
+				2FD8DFBF24399A0B004C5A92 /* ReginGroupSearchCell.swift */,
+				2FD8DFDB243CB489004C5A92 /* CreateRegionSearchCell.swift */,
+				2FD8DFD3243C7784004C5A92 /* RegionGroupNewHistoryCell.swift */,
+				2FD8DFC9243C719E004C5A92 /* CreateRegionViewController.swift */,
 				2FFA51532411011B0032396D /* HotRegionHistoryCell.swift */,
 			);
 			path = Region;
@@ -1014,6 +1050,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F2C3BF323E08FFA0025A390 /* LoginViewController.swift in Sources */,
+				2FD8DFD4243C7784004C5A92 /* RegionGroupNewHistoryCell.swift in Sources */,
+				2FD8DFC224399AC9004C5A92 /* RegionGroup.swift in Sources */,
 				2FADB18B24011447007D29E5 /* UIDevice.swift in Sources */,
 				2FADB16123FFA92F007D29E5 /* UIButton+Extensions.swift in Sources */,
 				2FADB15D23FFA92F007D29E5 /* YPVideoProcessor.swift in Sources */,
@@ -1027,6 +1065,7 @@
 				2FADB15823FFA92F007D29E5 /* YPPhotoCapture.swift in Sources */,
 				2FADB17123FFA92F007D29E5 /* CGFloat+Extensions.swift in Sources */,
 				2FFA514C240FB01B0032396D /* HotRegionGroupCell.swift in Sources */,
+				2FD8DFC6243C6CC2004C5A92 /* RadioButton.swift in Sources */,
 				2F93243A23FEB3CB009B7C7F /* MapMakerView.swift in Sources */,
 				2F8E010D240CA5A300A13810 /* LocationHomeViewController.swift in Sources */,
 				2FADB16B23FFA92F007D29E5 /* URL+Extensions.swift in Sources */,
@@ -1035,6 +1074,7 @@
 				2FADB16423FFA92F007D29E5 /* AVAsset+Extensions.swift in Sources */,
 				2FADB13423FFA92F007D29E5 /* YPColors.swift in Sources */,
 				2FADB16023FFA92F007D29E5 /* AVCaptureDevice+Extensions.swift in Sources */,
+				2FD8DFD0243C7759004C5A92 /* RegionGroupBackgroundCell.swift in Sources */,
 				2FADB14023FFA92F007D29E5 /* YPVideoCaptureHelper.swift in Sources */,
 				2FADB14F23FFA92F007D29E5 /* YPBottomPagerView.swift in Sources */,
 				2FADB15E23FFA92F007D29E5 /* YPPermissionCheckable.swift in Sources */,
@@ -1053,15 +1093,18 @@
 				2FB2E4A223FBD1AF00E15A81 /* SettingDetialViewController.swift in Sources */,
 				2FADB17F24001113007D29E5 /* ReviewTableCell.swift in Sources */,
 				2FADB18524001C9E007D29E5 /* FollowerTableViewController.swift in Sources */,
+				2FD8DFDA243CA8ED004C5A92 /* SuggestedUser.swift in Sources */,
 				2FB2E4A623FC42D700E15A81 /* SettingAccountPrivacyViewController.swift in Sources */,
 				2F8E011E240D467C00A13810 /* Region.swift in Sources */,
 				2FADB14823FFA92F007D29E5 /* YPAlbumView.swift in Sources */,
 				2FFA515A2418D8F90032396D /* ArchiveListViewController.swift in Sources */,
+				2FD8DFC8243C6D35004C5A92 /* RadioButtonController.swift in Sources */,
 				2FB2E4B723FD2FD600E15A81 /* AlbumCell.swift in Sources */,
 				2F2C3BE123E089CC0025A390 /* SceneDelegate.swift in Sources */,
 				2FADB13D23FFA92F007D29E5 /* YPSelectionsGalleryVC.swift in Sources */,
 				2FADB12723FFA92F007D29E5 /* YPVideoView.swift in Sources */,
 				2FADB14323FFA92F007D29E5 /* YPAlbumsManager.swift in Sources */,
+				2FD8DFCA243C719E004C5A92 /* CreateRegionViewController.swift in Sources */,
 				2FB2E4A823FC4CA800E15A81 /* TouchIDViewController.swift in Sources */,
 				2FADB15323FFA92F007D29E5 /* YPLibraryView.swift in Sources */,
 				2FADB15723FFA92F007D29E5 /* YPPhotoCaptureDefaults.swift in Sources */,
@@ -1069,6 +1112,7 @@
 				2FB2E4A023FBC5E800E15A81 /* SettingViewController.swift in Sources */,
 				2FADB13F23FFA92F007D29E5 /* YPSelectionsGalleryCell.swift in Sources */,
 				2FFA515C2418D9240032396D /* RecntlyViewedListViewController.swift in Sources */,
+				2FD8DFBC24399923004C5A92 /* RegionGroupSearchViewController.swift in Sources */,
 				2FFA514A240FAB810032396D /* RegionGroupDashboardViewController.swift in Sources */,
 				2FADB15423FFA92F007D29E5 /* YPAlbum.swift in Sources */,
 				2FADB17523FFA92F007D29E5 /* YPLoadingView.swift in Sources */,
@@ -1076,14 +1120,15 @@
 				2FADB14E23FFA92F007D29E5 /* YPPagerMenu.swift in Sources */,
 				2FADB13123FFA92F007D29E5 /* YPImageSize.swift in Sources */,
 				2F93242C23FE601A009B7C7F /* MapModeViewController.swift in Sources */,
+				2FD8DFC024399A0B004C5A92 /* ReginGroupSearchCell.swift in Sources */,
 				2FE6E9352402255800294B51 /* ProfileStoryCell.swift in Sources */,
 				2FFA51502410A7D40032396D /* PrivateRegion.swift in Sources */,
 				2FADB13823FFA92F007D29E5 /* YPLibrarySelection.swift in Sources */,
+				2FD8DFC4243C66E0004C5A92 /* GroupViewController.swift in Sources */,
 				2FD8DF9C242DE423004C5A92 /* ReviewAlbumViewController.swift in Sources */,
 				2FE6E9242401402C00294B51 /* PrivacyCell.swift in Sources */,
 				2FADB14623FFA92F007D29E5 /* YPGridView.swift in Sources */,
 				2FD8DF94242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift in Sources */,
-				2FFA514E240FB1210032396D /* HotRegion.swift in Sources */,
 				2FADB14D23FFA92F007D29E5 /* YPBottomPager.swift in Sources */,
 				2FFA51542411011B0032396D /* HotRegionHistoryCell.swift in Sources */,
 				2FADB16523FFA92F007D29E5 /* AVPlayer+Extensions.swift in Sources */,
@@ -1117,6 +1162,7 @@
 				2FB2E48D23F9814400E15A81 /* SignUpVIewControllerViewController.swift in Sources */,
 				2FADB17823FFA92F007D29E5 /* YPLoaders.swift in Sources */,
 				2FADB16823FFA92F007D29E5 /* PHCachingImageManager+Extensions.swift in Sources */,
+				2FD8DFD2243C7771004C5A92 /* RegionGroupTitleCell.swift in Sources */,
 				2FD8DFB42433208D004C5A92 /* ChatUser.swift in Sources */,
 				2FADB15C23FFA92F007D29E5 /* YPCameraVC.swift in Sources */,
 				2FE6E91A24012CDE00294B51 /* Device.swift in Sources */,
@@ -1129,12 +1175,14 @@
 				2FADB12D23FFA92F007D29E5 /* YPFiltersView.swift in Sources */,
 				2F93242E23FE65D3009B7C7F /* CustomMarkerView.swift in Sources */,
 				2FADB17723FFA92F007D29E5 /* YPAlerts.swift in Sources */,
+				2FD8DFD8243C7E92004C5A92 /* RegionGroupHistoryCell.swift in Sources */,
 				2FADB18724001CD1007D29E5 /* FollowerTableViewCell.swift in Sources */,
 				2FE6E92024013E3C00294B51 /* StoryPrivacyCell.swift in Sources */,
 				2FE6E91E24013D3500294B51 /* StoryLocationCell.swift in Sources */,
 				2FADB13223FFA92F007D29E5 /* YPImagePickerConfiguration.swift in Sources */,
 				2FD8DF90242B1F39004C5A92 /* ArchiveWatchTextViewController.swift in Sources */,
 				2FFA5156241101ED0032396D /* RegionHistory.swift in Sources */,
+				2FD8DFDC243CB489004C5A92 /* CreateRegionSearchCell.swift in Sources */,
 				2FADB13523FFA92F007D29E5 /* YPPickerScreen.swift in Sources */,
 				2FADB18D240115C6007D29E5 /* SettingActivityTableViewController.swift in Sources */,
 				2FADB15123FFA92F007D29E5 /* LibraryMediaManager.swift in Sources */,

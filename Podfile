@@ -18,6 +18,7 @@ pod 'AWSS3'
 pod 'ApiAI'
 pod 'SmileLock'
 pod 'MessengerKit', :git => 'https://github.com/steve228uk/MessengerKit.git'
+pod 'DLRadioButton', '~> 1.4'
 
 use_frameworks!
 end

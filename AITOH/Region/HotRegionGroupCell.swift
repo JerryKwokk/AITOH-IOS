@@ -13,7 +13,7 @@ class HotRegionGroupCell: UICollectionViewCell {
     @IBOutlet weak var bgImage: UIImageView!
     @IBOutlet weak var title: UILabel!
     
-    func initElement(region:HotRegion){
+    func initElement(region:RegionGroup){
         print(region.name)
         title.text = region.name
         print("IN cell" + region.bgImagePath)

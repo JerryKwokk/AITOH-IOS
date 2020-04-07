@@ -24,6 +24,7 @@ class PasscodeViewController: UIViewController,PasswordInputCompleteProtocol {
             lblMessage.text = "Enter the Passcode"
             passwordContainerView.tintColor = .red
             passwordContainerView.highlightedColor = .red
+            passwordContainerView.clearInput()
         }
     }
     

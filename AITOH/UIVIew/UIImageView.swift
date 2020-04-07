@@ -16,6 +16,14 @@ extension UIImageView{
         self.layer.borderColor = UIColor.white.cgColor
     }
     
+    func iconRound(){
+        self.layer.borderWidth = 0
+        self.layer.masksToBounds = false
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.cornerRadius = self.frame.height / 2
+        self.clipsToBounds = true
+    }
+    
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }

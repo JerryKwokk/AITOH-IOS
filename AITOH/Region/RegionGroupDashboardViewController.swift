@@ -14,7 +14,7 @@ class RegionGroupDashboardViewController: UIViewController, UICollectionViewDele
     
     @IBOutlet weak var historyCollectionView: UICollectionView!
     var region:Region?
-    var hotRegionGroup:[HotRegion] = []
+    var hotRegionGroup:[RegionGroup] = []
     var privateRegionGroup:[PrivateRegion] = []
     var regionGroupHistory:[RegionHistory] = []
     @IBOutlet weak var collectView: UICollectionView!
@@ -27,6 +27,19 @@ class RegionGroupDashboardViewController: UIViewController, UICollectionViewDele
         guard let url = URL(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/regiongroup?hot=true&regionId=" + String(region!.id!)+"&userId=" + userId) else { return }
         print(url)
         getHotRegionGroup(gate: url)
+    }
+    
+    @IBAction func btnCreateRegion(_ sender: Any) {
+        let viewController:UIViewController = UIStoryboard(name: "Region", bundle: nil).instantiateViewController(withIdentifier: "CreateRegionViewController")
+                   viewController.modalPresentationStyle = .fullScreen
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.linear)
+                   view.window!.layer.add(transition, forKey: kCATransition)
+                   
+        self.present(viewController, animated: false, completion: nil)
     }
     
     @IBAction func btnClose(_ sender: UIBarButtonItem) {
@@ -43,10 +56,10 @@ class RegionGroupDashboardViewController: UIViewController, UICollectionViewDele
              let history = json["history"].arrayValue
              for regionJson in list {
                 // 實例化一個 Book，並透過 bookJson 初始化它
-                let region = HotRegion(json: regionJson)
+                let region = RegionGroup(json: regionJson)
                 self.hotRegionGroup.append(region)
              }
-             let moreRegion = HotRegion(id: -1, name: "")
+             let moreRegion = RegionGroup(id: -1, name: "")
              self.hotRegionGroup.append(moreRegion)
              print(json)
              self.collectView.reloadData()
@@ -108,6 +121,24 @@ class RegionGroupDashboardViewController: UIViewController, UICollectionViewDele
             return CGSize(width: 100, height: 200)
         }else{
             return CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+        print(hotRegionGroup.count)
+        if(indexPath.row == hotRegionGroup.count - 1){
+            let vc = storyboard?.instantiateViewController(identifier: "RegionGroupSearchViewController") as! RegionGroupSearchViewController
+            vc.regionId = region?.id
+            let transition = CATransition()
+            transition.duration = 0.5
+            vc.modalPresentationStyle = .fullScreen
+            transition.type = CATransitionType.push
+            transition.subtype = CATransitionSubtype.fromLeft
+            transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+            view.window!.layer.add(transition, forKey: kCATransition)
+            present(vc, animated: false, completion: nil)
+            
         }
     }
     

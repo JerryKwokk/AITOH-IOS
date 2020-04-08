@@ -10,14 +10,13 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class RegionGroupDashboardViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class RegionGroupDashboardViewController: UIViewController {
     
     @IBOutlet weak var historyCollectionView: UICollectionView!
     var region:Region?
     var hotRegionGroup:[RegionGroup] = []
     var privateRegionGroup:[PrivateRegion] = []
     var regionGroupHistory:[RegionHistory] = []
-    @IBOutlet weak var collectView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,17 +61,16 @@ class RegionGroupDashboardViewController: UIViewController, UICollectionViewDele
              let moreRegion = RegionGroup(id: -1, name: "")
              self.hotRegionGroup.append(moreRegion)
              print(json)
-             self.collectView.reloadData()
              for priRegionJson in priList{
                 let priRegion = PrivateRegion(json: priRegionJson)
                 self.privateRegionGroup.append(priRegion)
              }
-             self.tableView.reloadData()
+             
              for hist in history{
                 let hotRegionHist = RegionHistory(json: hist)
                 self.regionGroupHistory.append(hotRegionHist)
              }
-             self.historyCollectionView.reloadData()
+             self.tableView.reloadData()
              break
                 
             case .failure(let error):
@@ -83,7 +81,7 @@ class RegionGroupDashboardViewController: UIViewController, UICollectionViewDele
     }
     
     
-    
+   /*
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(collectionView == self.collectView){
             return hotRegionGroup.count
@@ -141,7 +139,7 @@ class RegionGroupDashboardViewController: UIViewController, UICollectionViewDele
             
         }
     }
-    
+    */
 
     /*
     // MARK: - Navigation
@@ -161,22 +159,49 @@ extension RegionGroupDashboardViewController: UICollectionViewDelegateFlowLayout
 
 extension RegionGroupDashboardViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(privateRegionGroup.count > 2){
-            return 0
-        }else{
-            return privateRegionGroup.count
-        }
+        
+        return privateRegionGroup.count + regionGroupHistory.count + 1
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let privateRegion = privateRegionGroup[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PrivateGroupTableViewCell", for: indexPath)as! PrivateGroupTableViewCell
-        cell.initCommit(region: privateRegion)
-        return cell
+        print(indexPath.row)
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RegionGroupDhdTopTableViewCell", for: indexPath) as! RegionGroupDhdTopTableViewCell
+            cell.loadHotRegion(hotRegionGroup: hotRegionGroup)
+            cell.viewcontroller = self
+            cell.region = region
+            cell.collectionView.reloadData()
+            return cell
+        } else if privateRegionGroup.count != 0 && indexPath.row <= privateRegionGroup.count  {
+            let privateRegion = privateRegionGroup[indexPath.row - 1]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PrivateGroupTableViewCell", for: indexPath)as! PrivateGroupTableViewCell
+                cell.initCommit(region: privateRegion)
+            return cell
+        }else{
+            if(regionGroupHistory.count != 0){
+                print(indexPath.row)
+                print(regionGroupHistory.count)
+                let history = regionGroupHistory[indexPath.row - 1 - privateRegionGroup.count]
+                let cell = tableView.dequeueReusableCell(withIdentifier: "RegionGroupHistoryCell", for: indexPath) as! RegionGroupHistoryCell
+                cell.initCommit(history: history)
+                return cell
+            }else{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "RegionGroupHistoryCell", for: indexPath) as! RegionGroupHistoryCell
+                return cell
+            }
+        }
+
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        if indexPath.row == 0{
+            return 191
+        }else if privateRegionGroup.count != 0 && indexPath.row <= privateRegionGroup.count{
+            return 73
+        }else {
+            return 324
+        }
     }
 
 }

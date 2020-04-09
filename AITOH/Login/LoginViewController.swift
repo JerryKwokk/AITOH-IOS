@@ -97,6 +97,11 @@ class LoginViewController: UIViewController {
     }
     @IBAction func btnSendCode(_ sender: UIButton) {
         lblVerifyCodeMess.isHidden = false
+        let storyboard = UIStoryboard(name: "Signup", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "VerifyAccountViewController") as! VerifyAccountViewController
+        vc.forget = true
+        vc.user = User(username: txtForget.text!)
+        self.present(vc, animated: true, completion: nil)
     }
     @IBAction func btnSignUpClick(_ sender: UIButton) {
         performSegue(withIdentifier: "toSignUp", sender: self)
@@ -118,6 +123,8 @@ class LoginViewController: UIViewController {
                    let x = self.viewForgetPanel.frame.width+6
                self.viewForgetPanel.transform = CGAffineTransform(translationX: x, y: 0)})
     }
+    
+    
     @IBAction func btnLoginClick(_ sender: UIButton) {
 
         

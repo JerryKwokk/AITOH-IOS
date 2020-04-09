@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignUpViewControllerViewController: UIViewController {
 
@@ -62,17 +63,37 @@ class SignUpViewControllerViewController: UIViewController {
             lblErrorUsername.text = "Username is required"
             lblErrorUsername.isHidden = false
             checkInput = true
-        }else{
-            
         }
-        
         if(txtPwd.text == ""){
             lblErrorPwd.isHidden = false
             checkInput = true
         }
         
         if(!checkInput){
-            // do sign up
+            /*
+             
+               AF.request(URL.init(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/login")!, method: .post, parameters: ["username": txtUsername.text, "tel": txtRegionCode.text + txtPhone.text, "fullName": txtFullName.text, "pwd_hash": txtPwd.text, regionId: 1, suspensionStatusId: 1], encoding: JSONEncoding.default).responseJSON { (response) in
+
+                    switch response.result {
+                    case .success(let value):
+                        let json = JSON(value)
+                        print(json)
+                        if !json["verify"].boolValue {
+                            self.resendMes.text = "The verify is wrong"
+                            self.resendMes.textColor = .red
+                        }
+                        break
+                    case .failure(let error):
+                        print(error)
+                        break
+                    }
+                }
+             
+             */
+             let storyboard = UIStoryboard(name: "Signup", bundle: nil)
+                       let vc = storyboard.instantiateViewController(withIdentifier: "VerifyAccountViewController") as! VerifyAccountViewController
+            vc.user = User(username: txtUsername.text!, fname: txtFullName.text!, phone: txtRegionCode.text! + txtPhone.text!, password: txtPwd.text!)
+            self.present(vc, animated: true, completion: nil)
         }
     }
     

@@ -24,18 +24,19 @@ class CreateRegionViewController: UIViewController, RadioButtonControllerDelegat
     var users:[SuggestedUser] = []
     var searchUser:[SuggestedUser] = []
     var searching = false
+    var viewController: RegionGroupDashboardViewController!
     @IBOutlet weak var tableView: UITableView!
     
     @IBAction func btnPublicClick(_ sender: Any) {
         if(btnPrivate.isSelected){
-            btnPublic.isSelected = false
-            btnPrivate.isSelected = true
+            btnPublic.isSelected = true
+            btnPrivate.isSelected = false
         }
     }
     @IBAction func btnPrivateClick(_ sender: Any) {
         if(btnPublic.isSelected){
-            btnPublic.isSelected = true
-            btnPrivate.isSelected = false
+            btnPublic.isSelected = false
+            btnPrivate.isSelected = true
         }
     }
     
@@ -98,16 +99,25 @@ class CreateRegionViewController: UIViewController, RadioButtonControllerDelegat
     func didSelectedButton(_ radioButtonController: RadioButtonController, _ currentSelectedButton: RadioButton?) {
         print(currentSelectedButton as Any)
     }
-    @IBAction func btnSaveClick(_ sender: Any) {
+    @IBAction func btnSave(_ sender: Any) {
+        print("Click")
         let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromLeft
+        var policy: Bool = false
+        if(btnPublic.isSelected){
+            policy = true
+        }
+        viewController.privateRegionGroup.append(PrivateRegion(id: "-1", name: "Test", imagepaths: "https://aitohbucket.s3.amazonaws.com/privateRegion.jpg", count: 0))
+        viewController.tableView.reloadData()
         self.view.window!.layer.add(transition, forKey: nil)
         self.dismiss(animated: false, completion: nil)
     }
+    
     @IBAction func btnBackClick(_ sender: Any) {
+        print("print1")
         let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)

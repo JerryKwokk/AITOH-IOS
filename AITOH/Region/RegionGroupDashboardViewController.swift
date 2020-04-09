@@ -29,8 +29,9 @@ class RegionGroupDashboardViewController: UIViewController {
     }
     
     @IBAction func btnCreateRegion(_ sender: Any) {
-        let viewController:UIViewController = UIStoryboard(name: "Region", bundle: nil).instantiateViewController(withIdentifier: "CreateRegionViewController")
-                   viewController.modalPresentationStyle = .fullScreen
+        let viewController:CreateRegionViewController = UIStoryboard(name: "Region", bundle: nil).instantiateViewController(withIdentifier: "CreateRegionViewController") as!CreateRegionViewController
+        viewController.viewController = self
+        viewController.modalPresentationStyle = .fullScreen
         let transition = CATransition()
         transition.duration = 0.3
         transition.type = CATransitionType.push

@@ -167,6 +167,8 @@
 		2FD8DFDA243CA8ED004C5A92 /* SuggestedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFD9243CA8ED004C5A92 /* SuggestedUser.swift */; };
 		2FD8DFDC243CB489004C5A92 /* CreateRegionSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFDB243CB489004C5A92 /* CreateRegionSearchCell.swift */; };
 		2FD8DFDE243DB38B004C5A92 /* RegionGroupDhdTopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFDD243DB38A004C5A92 /* RegionGroupDhdTopTableViewCell.swift */; };
+		2FD8DFE0243EE36B004C5A92 /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FD8DFDF243EE36A004C5A92 /* Signup.storyboard */; };
+		2FD8DFE2243F04F3004C5A92 /* VerifyAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DFE1243F04F3004C5A92 /* VerifyAccountViewController.swift */; };
 		2FE6E91A24012CDE00294B51 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91924012CDE00294B51 /* Device.swift */; };
 		2FE6E91C24013B3B00294B51 /* StoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */; };
 		2FE6E91E24013D3500294B51 /* StoryLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */; };
@@ -384,6 +386,8 @@
 		2FD8DFD9243CA8ED004C5A92 /* SuggestedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedUser.swift; sourceTree = "<group>"; };
 		2FD8DFDB243CB489004C5A92 /* CreateRegionSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRegionSearchCell.swift; sourceTree = "<group>"; };
 		2FD8DFDD243DB38A004C5A92 /* RegionGroupDhdTopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionGroupDhdTopTableViewCell.swift; sourceTree = "<group>"; };
+		2FD8DFDF243EE36A004C5A92 /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
+		2FD8DFE1243F04F3004C5A92 /* VerifyAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyAccountViewController.swift; sourceTree = "<group>"; };
 		2FE6E91924012CDE00294B51 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		2FE6E91B24013B3B00294B51 /* StoryMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryMainCell.swift; sourceTree = "<group>"; };
 		2FE6E91D24013D3500294B51 /* StoryLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryLocationCell.swift; sourceTree = "<group>"; };
@@ -492,6 +496,7 @@
 				2F2C3BEC23E089CD0025A390 /* Info.plist */,
 				2F2C3BE423E089CC0025A390 /* Login.storyboard */,
 				2FFA5147240FAA0C0032396D /* Region.storyboard */,
+				2FD8DFDF243EE36A004C5A92 /* Signup.storyboard */,
 				2FFA51572418D7A30032396D /* Archive.storyboard */,
 				2FF8F922240286900085FFE8 /* Lanuch.storyboard */,
 				2FD8DF99242C816B004C5A92 /* Story.storyboard */,
@@ -774,6 +779,7 @@
 			isa = PBXGroup;
 			children = (
 				2FB2E4A723FC4CA800E15A81 /* TouchIDViewController.swift */,
+				2FD8DFE1243F04F3004C5A92 /* VerifyAccountViewController.swift */,
 				2F2C3BF223E08FFA0025A390 /* LoginViewController.swift */,
 				2FB2E48C23F9814400E15A81 /* SignUpVIewControllerViewController.swift */,
 			);
@@ -982,6 +988,7 @@
 				2FD8DF97242C6A96004C5A92 /* AudioRecorderViewController.xib in Resources */,
 				2FF8F91D240279500085FFE8 /* Assets.xcassets in Resources */,
 				2FD8DFB8243865B9004C5A92 /* Passcode.storyboard in Resources */,
+				2FD8DFE0243EE36B004C5A92 /* Signup.storyboard in Resources */,
 				2FADB12923FFA92F007D29E5 /* YPVideoFiltersVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1112,6 +1119,7 @@
 				2FB2E4A823FC4CA800E15A81 /* TouchIDViewController.swift in Sources */,
 				2FADB15323FFA92F007D29E5 /* YPLibraryView.swift in Sources */,
 				2FADB15723FFA92F007D29E5 /* YPPhotoCaptureDefaults.swift in Sources */,
+				2FD8DFE2243F04F3004C5A92 /* VerifyAccountViewController.swift in Sources */,
 				2FADB14A23FFA92F007D29E5 /* YPAlbumCell.swift in Sources */,
 				2FB2E4A023FBC5E800E15A81 /* SettingViewController.swift in Sources */,
 				2FADB13F23FFA92F007D29E5 /* YPSelectionsGalleryCell.swift in Sources */,

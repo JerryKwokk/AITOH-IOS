@@ -32,11 +32,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                   self.window?.rootViewController = rootNC
                                   self.window?.makeKeyAndVisible()
                 }else{
-                    let storyboard = UIStoryboard(name: "Passcode", bundle: nil)
-                                      guard let rootVC = storyboard.instantiateViewController(identifier: "TabViewController") as? TabViewController else {
-                                          print("ViewController not found")
-                                          return
-                                      }
+                    
+                   let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                    guard let rootVC = storyboard.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else {
+                        print("ViewController not found")
+                        return
+                    }
                     let rootNC = UINavigationController(rootViewController: rootVC)
                                   self.window?.rootViewController = rootNC
                                   self.window?.makeKeyAndVisible()

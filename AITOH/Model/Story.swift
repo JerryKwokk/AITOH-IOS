@@ -18,8 +18,9 @@ struct Story {
     var location: String
     var img:UIImage
     var imgPath:String
+    var media: String
     
-    init(id:String, username: String, icon:UIImage, iconPath:String, desc:String, time:String, location:String, img:UIImage, imgPath:String) {
+    init(id:String, username: String, icon:UIImage, iconPath:String, desc:String, time:String, location:String, img:UIImage, imgPath:String, media: String) {
         self.id = id
         self.username = username
         self.icon = icon
@@ -29,5 +30,18 @@ struct Story {
         self.location = location
         self.img = img
         self.imgPath = imgPath
+        self.media = media
+    }
+    init(id:String, username: String, icon:UIImage, iconPath:String, desc:String, time:String, location:String, imgPath:String, media: String) {
+        self.id = id
+        self.username = username
+        self.icon = icon
+        self.iconPath = iconPath
+        self.desc = desc
+        self.time = time
+        self.location = location
+        self.img = UIImage(named: "defaultIcon")!
+        self.imgPath = imgPath
+        self.media = media
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class StoryLocationCell: UITableViewCell {
     
-    
+    func setLocation(){
+        
+    }
 
 }

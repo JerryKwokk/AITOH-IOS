@@ -18,8 +18,9 @@ class StoryReviewViewController: UIViewController{
     //@IBOutlet weak var photoSelected: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       self.navigationController!.isNavigationBarHidden = false
-        
+        if self.navigationController != nil{
+            self.navigationController!.isNavigationBarHidden = false
+        }
      //   selectPhoto.image = photo
         // Do any additional setup after loading the view.
     }
@@ -28,6 +29,7 @@ class StoryReviewViewController: UIViewController{
     @IBAction func btnCancelClick(_ sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
+        
     }
     
     @IBAction func btnShareClick(_ sender: Any) {

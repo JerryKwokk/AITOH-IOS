@@ -12,7 +12,11 @@ import SwiftyJSON
 class LocationHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     var regions: [Region] = []
+    var searchRegions: [Region] = []
+    var search = false
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
        guard let url = URL(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/region") else { return }
@@ -46,20 +50,29 @@ class LocationHomeViewController: UIViewController, UITableViewDataSource, UITab
         let nibName = UINib(nibName: "LocationHomeTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "LocationHomeTableViewCell")
         
-        
+        searchBar.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
         // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(search){
+            return searchRegions.count
+        }else{
+            return regions.count
+        }
         
-        return regions.count
         
     }
        
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let region = regions[indexPath.row]
+        var region: Region
+        if search {
+            region = searchRegions[indexPath.row]
+        }else{
+            region = regions[indexPath.row]
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationHomeTableViewCell")as! LocationHomeTableViewCell
         cell.initCommit(region: region)
         
@@ -67,7 +80,12 @@ class LocationHomeViewController: UIViewController, UITableViewDataSource, UITab
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
        {
-        let region = regions[indexPath.row]
+         var region: Region
+         if search {
+                   region = searchRegions[indexPath.row]
+         }else{
+                   region = regions[indexPath.row]
+         }
         let storyboard = UIStoryboard(name: "Region", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "RegionGroupDashboardViewController")as! RegionGroupDashboardViewController
         controller.region = region
@@ -77,6 +95,24 @@ class LocationHomeViewController: UIViewController, UITableViewDataSource, UITab
 
        }
     
+}
 
-
+extension LocationHomeViewController:UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" || searchText == " " {
+            search = false
+        }else{
+            searchRegions.removeAll()
+            for item in searchRegions {
+                if(item.title!.uppercased().contains(searchText.uppercased())){
+                    searchRegions.append(item)
+                }
+            }
+            search = true
+        }
+        
+        tableView.reloadData()
+        
+        
+    }
 }

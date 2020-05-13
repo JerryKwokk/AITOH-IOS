@@ -53,6 +53,18 @@ class RegionGroupDhdTopTableViewCell: UITableViewCell,  UICollectionViewDelegate
             transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
             viewcontroller!.view.window!.layer.add(transition, forKey: kCATransition)
             viewcontroller!.present(vc, animated: false, completion: nil)
+        }else{
+            let storyboard = UIStoryboard(name: "Region", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "GroupViewController") as! GroupViewController
+            vc.regionGroup = hotRegionGroup![indexPath.row]
+            let transition = CATransition()
+            transition.duration = 0.5
+            vc.modalPresentationStyle = .fullScreen
+            transition.type = CATransitionType.push
+            transition.subtype = CATransitionSubtype.fromLeft
+            transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+            viewcontroller!.view.window!.layer.add(transition, forKey: kCATransition)
+            viewcontroller!.present(vc, animated: false, completion: nil)
             
         }
     }

@@ -35,5 +35,18 @@ struct RegionHistory {
         print("check null: " + historyImagePath)
         print("finish")
     }
+    
+    init(id:Int, userId: Int, username: String, userImagePath: String, date: String, desc: String, location: String, long:Double, lat:Double, historyImagePath: String){
+        self.id = id
+        self.userId = userId
+        self.username = username
+        self.userImagePath = userImagePath
+        self.date = date
+        self.desc = desc
+        self.location = location
+        self.long = long
+        self.lat = lat
+        self.historyImagePath = historyImagePath
+    }
 }
 

@@ -65,6 +65,8 @@ class VerifyAccountViewController: UIViewController {
             if forget {
                 
             }else{
+                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                let viewController:TabViewController = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "TabViewController") as! TabViewController
                 AF.request(URL.init(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/verify")!, method: .get, parameters: ["code": code.text, "phone": user.phone], encoding: JSONEncoding.default).responseJSON { (response) in
 
                         switch response.result {
@@ -74,6 +76,19 @@ class VerifyAccountViewController: UIViewController {
                             if !json["verify"].boolValue {
                                 self.resendMes.text = "The verify is wrong"
                                 self.resendMes.textColor = .red
+                            }else{
+                                UserDefaults.standard.set(json["userId"].stringValue, forKey: "userId")
+                                UserDefaults.standard.set(json["username"].stringValue,forKey: "username")
+                                print(UserDefaults.standard.value(forKey: "userId"))
+                                viewController.modalPresentationStyle = .fullScreen
+                                let transition = CATransition()
+                                transition.duration = 0.3
+                                transition.type = CATransitionType.push
+                                transition.subtype = CATransitionSubtype.fromRight
+                                transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.linear)
+                                self.view.window!.layer.add(transition, forKey: kCATransition)
+                                
+                                self.present(viewController, animated: false, completion: nil)
                             }
                             break
                         case .failure(let error):

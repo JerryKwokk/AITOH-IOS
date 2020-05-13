@@ -23,24 +23,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                //self.window =  UIWindow(frame: UIScreen.main.bounds)
                if UserDefaults.standard.value(forKey: "username") != nil && UserDefaults.standard.value(forKey: "userId") != nil {
                 if(UserDefaults.standard.value(forKey: "passcode") != nil){
-                   let storyboard = UIStoryboard(name: "Passcode", bundle: nil)
-                   guard let rootVC = storyboard.instantiateViewController(identifier: "PasscodeViewController") as? PasscodeViewController else {
-                       print("ViewController not found")
-                       return
-                   }
-                    let rootNC = UINavigationController(rootViewController: rootVC)
-                                  self.window?.rootViewController = rootNC
-                                  self.window?.makeKeyAndVisible()
+                   let viewController = UIStoryboard(name: "Login", bundle:
+                       Bundle.main).instantiateViewController(withIdentifier: "TabViewController")
+                   let navViewController = UINavigationController(rootViewController: viewController)
+                   //let share = UIApplication.shared.delegate as? AppDelegate
+                   self.window?.rootViewController = navViewController
+                   self.window?.makeKeyAndVisible()
                 }else{
                     
-                   let storyboard = UIStoryboard(name: "Login", bundle: nil)
-                    guard let rootVC = storyboard.instantiateViewController(identifier: "LoginViewController") as? LoginViewController else {
-                        print("ViewController not found")
-                        return
-                    }
-                    let rootNC = UINavigationController(rootViewController: rootVC)
-                                  self.window?.rootViewController = rootNC
-                                  self.window?.makeKeyAndVisible()
+                   let viewController = UIStoryboard(name: "Login", bundle:
+                       Bundle.main).instantiateViewController(withIdentifier: "TabViewController")
+                   let navViewController = UINavigationController(rootViewController: viewController)
+                   //let share = UIApplication.shared.delegate as? AppDelegate
+                   self.window?.rootViewController = navViewController
+                   self.window?.makeKeyAndVisible()
                 }
                }else{
                 let storyboard = UIStoryboard(name: "Login", bundle: nil)

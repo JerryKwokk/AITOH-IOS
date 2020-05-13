@@ -10,5 +10,7 @@ import UIKit
 
 class StoryPrivacyCell: UITableViewCell {
 
-   
+    func setPrivacy(){
+        
+    }
 }

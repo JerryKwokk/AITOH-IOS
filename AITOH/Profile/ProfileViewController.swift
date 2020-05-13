@@ -48,6 +48,13 @@ class ProfileViewController: UIViewController {
         print("refesh data")
         let refeshDead = DispatchTime.now() + .milliseconds(900)
         DispatchQueue.main.asyncAfter(deadline: refeshDead){
+            let currentDate = Date()
+            let dataFormatter = DateFormatter() //實體化日期格式化物件
+            dataFormatter.locale = Locale(identifier: "zh_Hant_TW")
+            dataFormatter.dateFormat = "YYYY-MM-dd" //參照ISO8601的規則
+            let stringDate = dataFormatter.string(from: currentDate)
+            let story = Story(id: "2", username: "kevin.api", icon: UIImage(named: "")!, iconPath: "null", desc: stringDate, time: "null", location: "IVE LWL", imgPath: "null", media: "image/mp3")
+            self.storys.append(story)
             self.refeshControl.endRefreshing()
         }
     }
@@ -55,7 +62,7 @@ class ProfileViewController: UIViewController {
     
 
       func createArray() -> [Story]{
-          let story = Story(id: "1", username: "kevin.api", icon: UIImage(named: "profileIconImage.png")!, iconPath: "null", desc: "I am sad", time: "3 seconds before", location: "Tseung Kwan O, Hong Kong", img: UIImage(named: "profileIconImage.png")!, imgPath: "null")
+          let story = Story(id: "1", username: "kevin.api", icon: UIImage(named: "profileIconImage.png")!, iconPath: "null", desc: "I am sad", time: "3 seconds before", location: "Tseung Kwan O, Hong Kong", img: UIImage(named: "profileIconImage.png")!, imgPath: "null", media: "image/jpg")
           
           return [story]
       }
@@ -84,10 +91,22 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate{
         }else{
             print("setArray")
             let story = storys[indexPath.row - 1]
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileStoryCell") as! ProfileStoryCell
-            cell.setup(story: story)
+            if story.media == "image/jpg"{
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileStoryCell") as! ProfileStoryCell
+                cell.setup(story: story)
+                
+                return cell
+                
+            }else{
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileStoryVoiceCell") as! ProfileStoryVoiceCell
+                cell.setup(story: story)
+                
+                return cell
+                
+            }
             
-            return cell
         }
         
         

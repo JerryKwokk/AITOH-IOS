@@ -62,7 +62,7 @@ class ProfileViewController: UIViewController {
     
 
       func createArray() -> [Story]{
-          let story = Story(id: "1", username: "kevin.api", icon: UIImage(named: "profileIconImage.png")!, iconPath: "null", desc: "I am sad", time: "3 seconds before", location: "Tseung Kwan O, Hong Kong", img: UIImage(named: "profileIconImage.png")!, imgPath: "null", media: "image/jpg")
+          let story = Story(id: "1", username: "kevin.api", icon: UIImage(named: "profileIconImage.png")!, iconPath: "null", desc: "I am sad", time: "00:25AM", location: "Tseung Kwan O, Hong Kong", img: UIImage(named: "profileIconImage.png")!, imgPath: "null", media: "image/jpg")
           
           return [story]
       }

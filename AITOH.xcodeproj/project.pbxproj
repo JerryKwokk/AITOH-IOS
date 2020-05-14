@@ -147,6 +147,7 @@
 		2FCD419A246C24A900A25C19 /* RegionGroupHistoryReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD4199246C24A900A25C19 /* RegionGroupHistoryReviewCell.swift */; };
 		2FCD419C246C59DC00A25C19 /* HistoryCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD419B246C59DC00A25C19 /* HistoryCheckingViewController.swift */; };
 		2FCD419E246C5BD600A25C19 /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD419D246C5BD600A25C19 /* CharacterSet.swift */; };
+		2FCD41A0246D753200A25C19 /* HistoryDetialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD419F246D753200A25C19 /* HistoryDetialsViewController.swift */; };
 		2FD8DF8E24231C1F004C5A92 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF8D24231C1F004C5A92 /* History.swift */; };
 		2FD8DF90242B1F39004C5A92 /* ArchiveWatchTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF8F242B1F39004C5A92 /* ArchiveWatchTextViewController.swift */; };
 		2FD8DF94242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF93242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift */; };
@@ -375,6 +376,7 @@
 		2FCD4199246C24A900A25C19 /* RegionGroupHistoryReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionGroupHistoryReviewCell.swift; sourceTree = "<group>"; };
 		2FCD419B246C59DC00A25C19 /* HistoryCheckingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCheckingViewController.swift; sourceTree = "<group>"; };
 		2FCD419D246C5BD600A25C19 /* CharacterSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
+		2FCD419F246D753200A25C19 /* HistoryDetialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetialsViewController.swift; sourceTree = "<group>"; };
 		2FD8DF8D24231C1F004C5A92 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		2FD8DF8F242B1F39004C5A92 /* ArchiveWatchTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveWatchTextViewController.swift; sourceTree = "<group>"; };
 		2FD8DF93242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveWatchVideoViewController.swift; sourceTree = "<group>"; };
@@ -910,6 +912,7 @@
 				2FFA514B240FB01B0032396D /* HotRegionGroupCell.swift */,
 				2FFA51512410E09C0032396D /* PrivateGroupTableViewCell.swift */,
 				2FD8DFBF24399A0B004C5A92 /* ReginGroupSearchCell.swift */,
+				2FCD419F246D753200A25C19 /* HistoryDetialsViewController.swift */,
 				2FD8DFDB243CB489004C5A92 /* CreateRegionSearchCell.swift */,
 				2FD8DFD3243C7784004C5A92 /* RegionGroupNewHistoryCell.swift */,
 				2FD8DFC9243C719E004C5A92 /* CreateRegionViewController.swift */,
@@ -1147,6 +1150,7 @@
 				2FCD419C246C59DC00A25C19 /* HistoryCheckingViewController.swift in Sources */,
 				2F2C3BE123E089CC0025A390 /* SceneDelegate.swift in Sources */,
 				2FADB13D23FFA92F007D29E5 /* YPSelectionsGalleryVC.swift in Sources */,
+				2FCD41A0246D753200A25C19 /* HistoryDetialsViewController.swift in Sources */,
 				2FADB12723FFA92F007D29E5 /* YPVideoView.swift in Sources */,
 				2FADB14323FFA92F007D29E5 /* YPAlbumsManager.swift in Sources */,
 				2FD8DFCA243C719E004C5A92 /* CreateRegionViewController.swift in Sources */,

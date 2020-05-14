@@ -101,17 +101,20 @@ extension GroupViewController:UITableViewDataSource, UITableViewDelegate{
         if(indexPath.row == 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: "RegionGroupBackgroundCell", for: indexPath)as! RegionGroupBackgroundCell
             cell.setImage(imagePath: regionGroup!.bgImagePath)
+            cell.selectionStyle = .none
             return cell
             
         }else if (indexPath.row == 1){
             let cell = tableView.dequeueReusableCell(withIdentifier: "RegionGroupTitleCell", for: indexPath)as! RegionGroupTitleCell
             cell.setDetial(title: regionGroup!.name, policy: true, member: 3)
             cell.viewController = self
+            cell.selectionStyle = .none
                        return cell
             
         }else if (indexPath.row == 2 ){
             let cell = tableView.dequeueReusableCell(withIdentifier: "RegionGroupNewHistoryCell", for: indexPath)as! RegionGroupNewHistoryCell
             cell.setIcon()
+            cell.selectionStyle = .none
             return cell
             
         }else {
@@ -120,6 +123,7 @@ extension GroupViewController:UITableViewDataSource, UITableViewDelegate{
                let history = historys[indexPath.row - 3]
                 let cell = tableView.dequeueReusableCell(withIdentifier: "RegionGroupHistoryCell") as! RegionGroupHistoryCell
                 cell.initCommit(history: history)
+                cell.selectionStyle = .none
                 return cell
             
         }
@@ -133,9 +137,11 @@ extension GroupViewController:UITableViewDataSource, UITableViewDelegate{
         }else if indexPath.row == 2{
             return 99
         }else{
-            return 260
+            return 306
         }
     }
+    
+
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 2{
@@ -176,6 +182,19 @@ extension GroupViewController:UITableViewDataSource, UITableViewDelegate{
                 
             }
             present(picker, animated: true, completion: nil)
+        }else if indexPath.row >= 3{
+            let vc = storyboard!.instantiateViewController(identifier: "HistoryDetialsViewController") as! HistoryDetialsViewController
+            
+            vc.history = historys[indexPath.row - 3]
+            
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.type = CATransitionType.push
+            transition.subtype = CATransitionSubtype.fromRight
+            transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+            view.window!.layer.add(transition, forKey: kCATransition)
+            present(vc, animated: false, completion: nil)
+            
         }
     }
     

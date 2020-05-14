@@ -13,7 +13,14 @@ import SwiftyJSON
 class ArchiveListViewController: UIViewController {
 
     var archives: [Archive] = []
+    var history: History!
     @IBOutlet weak var tableView: UITableView!
+    lazy var refeshControl: UIRefreshControl = {
+        let refeshControl = UIRefreshControl()
+        refeshControl.tintColor = .gray
+        refeshControl.addTarget(self, action: #selector(requestData), for: .valueChanged)
+        return refeshControl
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         print("archiveList")
@@ -21,9 +28,28 @@ class ArchiveListViewController: UIViewController {
         guard let url = URL(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/archive?userId=" + userId!) else { return }
         print(url)
         createArray(gate: url)
-        
+        tableView.refreshControl = refeshControl
         // Do any additional setup after loading the view.
     }
+    
+    @objc func requestData(){
+         print("refesh data")
+         let refeshDead = DispatchTime.now() + .milliseconds(900)
+         DispatchQueue.main.asyncAfter(deadline: refeshDead){
+            let currentDate = Date()
+            let dataFormatter = DateFormatter() //實體化日期格式化物件
+            dataFormatter.locale = Locale(identifier: "zh_Hant_TW")
+            dataFormatter.dateFormat = "YYYY-MM-dd" //參照ISO8601的規則
+            let stringDate = dataFormatter.string(from: currentDate)
+             let arch = Archive(id: -1, historyId: -1, iconImagePath: "https://aitohbucket.s3.amazonaws.com/regionicon.jpg", content: "This is Region History", date: "Today")
+            let hist = History(id: 101, description: "This is Region History", create_date: stringDate, location: "Devil's Peak Top Battery", username: "tonyliu43", userId: 1090, user_iconPath: "https://aitohbucket.s3.amazonaws.com/regionicon.jpg", historyMediaId: -1, historyMediaPath: "https://aitohbucket.s3.amazonaws.com/region-Group.jpg", mediaTypeId: 1)
+            self.history = hist
+            self.archives.insert(arch, at: 0)
+            self.tableView.reloadData()
+             self.refeshControl.endRefreshing()
+         }
+     }
+    
     
 
     /*
@@ -82,8 +108,8 @@ extension ArchiveListViewController: UITableViewDataSource, UITableViewDelegate{
     {
         
         let historyId = archives[indexPath.row].historyId
+        if historyId != -1{
         let userId = UserDefaults.standard.string(forKey: "userId")
-        let history:History
         guard let getArchiveURL = URL(string: "https://cuvfsx9pda.execute-api.us-east-1.amazonaws.com/aitoh/archive?userId=" + userId! + "&historyId=" + String(historyId)) else { return }
         
         print(getArchiveURL)
@@ -117,6 +143,11 @@ extension ArchiveListViewController: UITableViewDataSource, UITableViewDelegate{
                 print(error)
             }
             
+        }
+        }else{
+            let vc = storyboard!.instantiateViewController(identifier: "ArchiveWatchViewController") as? ArchiveWatchViewController
+            vc?.history = history
+            self.present(vc!, animated: true, completion: nil)
         }
         
     }

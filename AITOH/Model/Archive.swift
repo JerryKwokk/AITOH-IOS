@@ -27,4 +27,12 @@ struct Archive {
         date = json["create_date"].stringValue
         print(date + content + iconImagePath)
     }
+    
+    init(id: Int, historyId: Int, iconImagePath: String, content:String, date:String) {
+        self.id = id
+        self.historyId = historyId
+        self.iconImagePath = iconImagePath
+        self.content = content
+        self.date = date
+    }
 }

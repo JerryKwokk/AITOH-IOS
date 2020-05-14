@@ -20,6 +20,19 @@ struct History {
     var historyMediaPath: String
     var mediaTypeId: Int
     
+    init(id: Int, description:String, create_date:String, location: String, username: String, userId:Int, user_iconPath:String, historyMediaId:Int, historyMediaPath:String, mediaTypeId:Int) {
+        self.id = id
+        self.description = description
+        self.create_date = create_date
+        self.location = location
+        self.username = username
+        self.userId = userId
+        self.user_iconPath = user_iconPath
+        self.historyMediaId = historyMediaId
+        self.historyMediaPath = historyMediaPath
+        self.mediaTypeId = mediaTypeId
+        
+    }
     init() {
         id = -1
         description = ""
@@ -45,4 +58,6 @@ struct History {
         historyMediaPath = json["historyMediaPath"].stringValue
         mediaTypeId = json["mediaTypeId"].intValue
     }
+    
+
 }

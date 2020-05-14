@@ -75,7 +75,7 @@ class LocationHomeViewController: UIViewController, UITableViewDataSource, UITab
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "LocationHomeTableViewCell")as! LocationHomeTableViewCell
         cell.initCommit(region: region)
-        
+        cell.selectionStyle = .none
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)

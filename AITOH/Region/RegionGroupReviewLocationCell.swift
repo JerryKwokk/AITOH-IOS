@@ -54,7 +54,7 @@ class RegionGroupReviewLocationCell: UITableViewCell, UICollectionViewDelegate, 
         let textFont = UIFont.systemFont(ofSize: 17)
         let textMaxSize = CGSize(width: 240, height: CGFloat(MAXFLOAT))
         let textLabelSize = self.textSize(text:locationName , font: textFont, maxSize: textMaxSize)
-        cellSize.width = textLabelSize.width + 90
+        cellSize.width = textLabelSize.width + 120
         cellSize.height = 1000.0
         return cellSize
     }

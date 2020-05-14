@@ -8,17 +8,18 @@
 import UIKit
 import AVFoundation
 import Alamofire
+import Speech
 
 protocol AudioRecorderViewControllerDelegate: class {
     func audioRecorderViewControllerDismissed(withFileURL fileURL: NSURL?)
 }
-
 
 class AudioRecorderViewController: UINavigationController {
     
     internal let childViewController = AudioRecorderChildViewController()
     weak var audioRecorderDelegate: AudioRecorderViewControllerDelegate?
     
+    @IBOutlet weak var textView: UITextView!
     var statusBarStyle: UIStatusBarStyle = .default
     
     // MARK: - Lifecycle
@@ -33,7 +34,9 @@ class AudioRecorderViewController: UINavigationController {
         navigationBar.tintColor = UIColor.white
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
     }
+        
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,11 +56,11 @@ class AudioRecorderViewController: UINavigationController {
     internal class AudioRecorderChildViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
         
         var saveButton: UIBarButtonItem!
-        
         @IBOutlet weak var timeLabel: UILabel!
         @IBOutlet weak var recordButton: UIButton!
         @IBOutlet weak var recordButtonContainer: UIView!
         @IBOutlet weak var playButton: UIButton!
+        @IBOutlet weak var textView:UITextView!
         
         weak var audioRecorderDelegate: AudioRecorderViewControllerDelegate?
         
@@ -67,6 +70,12 @@ class AudioRecorderViewController: UINavigationController {
         var recorder: AVAudioRecorder!
         var player: AVAudioPlayer?
         var outputURL: NSURL
+        
+        var lang: String = "en-US"
+           var SpeechRecognitionTask: SFSpeechRecognitionTask?
+           var RecognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+           var AudioEngine = AVAudioEngine()
+           var SpeechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-US"))
         
         init() {
             let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
@@ -103,6 +112,39 @@ class AudioRecorderViewController: UINavigationController {
             recordButtonContainer.layer.cornerRadius = 25
             recordButtonContainer.layer.borderColor = UIColor.white.cgColor
             recordButtonContainer.layer.borderWidth = 3
+            
+            // Speech to Text Section
+            recordButton.isEnabled = false
+            SpeechRecognizer?.delegate = self as? SFSpeechRecognizerDelegate
+            SpeechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: lang))
+            SFSpeechRecognizer.requestAuthorization { (authStatus) in
+                
+                var isButtonEnabled = false
+                
+                switch authStatus {
+                case .authorized:
+                    isButtonEnabled = true
+                    
+                case .restricted:
+                    isButtonEnabled = false
+                    print("Restricted")
+                    
+                case .notDetermined:
+                    isButtonEnabled = false
+                    print("notdetermined")
+                    
+                case .denied:
+                    isButtonEnabled = false
+                    print("Access denied")
+                    
+                @unknown default: break
+                    // ...
+                }
+                
+                OperationQueue.main.addOperation() {
+                    self.recordButton.isEnabled = isButtonEnabled
+                }
+            }
         }
         
         override func viewDidAppear(_ animated: Bool) {
@@ -143,14 +185,29 @@ class AudioRecorderViewController: UINavigationController {
             if recorder.isRecording {
                 recorder.stop()
             } else {
+
                 milliseconds = 0
                 timeLabel.text = "00:00.00"
                 timeTimer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(updateTimeLabel(timer:)), userInfo: nil, repeats: true)
                 recorder.deleteRecording()
+                
+                SpeechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: lang))
+                if AudioEngine.isRunning {
+                    self.AudioEngine.stop()
+                    self.RecognitionRequest?.endAudio()
+                    print("engine close")
+                } else {
+                    print("Go to speech")
+                    startSpeechRecording()
+                }
+
+                
+                
                 recorder.record()
             }
             
             updateControls()
+
         }
         
         @IBAction func play(_ sender: Any) {
@@ -189,6 +246,65 @@ class AudioRecorderViewController: UINavigationController {
             if let player = player {
                 player.stop()
                 self.player = nil
+            }
+        }
+        
+        func startSpeechRecording() {
+            print("call start SpeechRecording")
+            // Cancel the previous task if it's running.
+            if SpeechRecognitionTask != nil {
+                SpeechRecognitionTask?.cancel()
+                SpeechRecognitionTask = nil
+            }
+            
+            RecognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+            
+            let inputNode = AudioEngine.inputNode
+            
+            guard let RecognitionRequest = RecognitionRequest else {
+                fatalError("Error in Recognition")
+            }
+            
+            RecognitionRequest.shouldReportPartialResults = true
+            
+            SpeechRecognitionTask = SpeechRecognizer?.recognitionTask(with: RecognitionRequest, resultHandler: { (result, error) in
+                
+                var FinalResult = false
+                
+                if result != nil {
+                    print(result)
+                    FinalResult = (result?.isFinal)!
+                }
+                
+                if error != nil || FinalResult {
+                    self.RecognitionRequest = nil
+                    self.SpeechRecognitionTask = nil
+                    self.AudioEngine.stop()
+                    inputNode.removeTap(onBus: 0)
+                    self.recordButton.isEnabled = true
+                    
+                }
+            })
+            
+            let recordingFormat = inputNode.outputFormat(forBus: 0)
+            inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
+                self.RecognitionRequest?.append(buffer)
+            }
+            
+            AudioEngine.prepare()
+            
+            do {
+                try AudioEngine.start()
+            } catch {
+                print("AudioEngine didn't initialize")
+            }
+        }
+        
+        func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
+            if available {
+                recordButton.isEnabled = true
+            } else {
+                recordButton.isEnabled = false
             }
         }
         

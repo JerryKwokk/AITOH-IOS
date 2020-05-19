@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyAimlTXyfphlB_CrEn2eD4dPVICemeoIYk")
         let configuration = AIDefaultConfiguration()
         configuration.clientAccessToken = "ff108b2d831140f6807c967b051a859d"
+        //UserDefaults.standard.removeObject(forKey: "passcode")
       //  print(configuration.clientAccessToken)
         let apiai = ApiAI.shared()
         apiai?.configuration = configuration

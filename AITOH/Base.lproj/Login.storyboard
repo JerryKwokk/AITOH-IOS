@@ -585,7 +585,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                 </subviews>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
@@ -1025,6 +1025,12 @@
                     <view key="view" contentMode="scaleToFill" id="F53-gn-w9P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cacheHome" translatesAutoresizingMaskIntoConstraints="NO" id="mEn-R3-bqD">
+                                <rect key="frame" x="0.0" y="20" width="414" height="746"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="xhE-q2-5Fs"/>
                     </view>
@@ -1032,7 +1038,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vm-eu-43d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="867" y="2756"/>
+            <point key="canvasLocation" x="866.66666666666674" y="2755.434782608696"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BXw-fd-wKr">
@@ -1335,7 +1341,7 @@
                                             <outlet property="username" destination="xr4-Zo-DFb" id="PTl-Me-aWu"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="273" id="L0r-k2-weW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProfileStoryVoiceCell" rowHeight="273" id="L0r-k2-weW" customClass="ProfileStoryVoiceCell" customModule="AITOH" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="843" width="414" height="273"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L0r-k2-weW" id="6cq-qv-Qcy">
@@ -1373,17 +1379,21 @@
                                                     <rect key="frame" x="89" y="93" width="290" height="169"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXh-2X-MMp">
-                                                    <rect key="frame" x="89" y="93" width="290" height="169"/>
+                                                <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8DI-Xo-lq7">
+                                                    <rect key="frame" x="204" y="149" width="60" height="57"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="round_play_arrow_black_18dp"/>
                                                     <connections>
-                                                        <action selector="btnPlayClick:" destination="L0r-k2-weW" eventType="touchUpInside" id="XLi-P6-kGy"/>
+                                                        <action selector="btnPlayClick:" destination="L0r-k2-weW" eventType="touchUpInside" id="oib-WQ-Pmf"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <connections>
+                                            <outlet property="btnPlayClick" destination="8DI-Xo-lq7" id="41t-1g-1Oa"/>
                                             <outlet property="desc" destination="Twu-Mf-4Ud" id="L6O-VE-YVs"/>
                                             <outlet property="icon" destination="FCV-ev-K8b" id="qNe-s7-yph"/>
                                             <outlet property="img" destination="1BY-R8-2xg" id="gIe-Vx-NxF"/>
@@ -2449,6 +2459,7 @@
         <image name="baseline_post_add_black_24pt_1x" width="24" height="24"/>
         <image name="bot" width="198" height="199"/>
         <image name="botChatBG" width="795" height="281"/>
+        <image name="cacheHome" width="1242" height="2162"/>
         <image name="loginBG" width="2484" height="554"/>
         <image name="loginBackground" width="1242" height="1719"/>
         <image name="loginBackgroundTop" width="213" height="11"/>

@@ -148,6 +148,8 @@
 		2FCD419C246C59DC00A25C19 /* HistoryCheckingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD419B246C59DC00A25C19 /* HistoryCheckingViewController.swift */; };
 		2FCD419E246C5BD600A25C19 /* CharacterSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD419D246C5BD600A25C19 /* CharacterSet.swift */; };
 		2FCD41A0246D753200A25C19 /* HistoryDetialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD419F246D753200A25C19 /* HistoryDetialsViewController.swift */; };
+		2FCD41A2246E7F0000A25C19 /* ProfileStoryVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD41A1246E7F0000A25C19 /* ProfileStoryVideoCell.swift */; };
+		2FCD41A6246EACCD00A25C19 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 2FCD41A5246EACCD00A25C19 /* video.mp4 */; };
 		2FD8DF8E24231C1F004C5A92 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF8D24231C1F004C5A92 /* History.swift */; };
 		2FD8DF90242B1F39004C5A92 /* ArchiveWatchTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF8F242B1F39004C5A92 /* ArchiveWatchTextViewController.swift */; };
 		2FD8DF94242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD8DF93242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift */; };
@@ -377,6 +379,8 @@
 		2FCD419B246C59DC00A25C19 /* HistoryCheckingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCheckingViewController.swift; sourceTree = "<group>"; };
 		2FCD419D246C5BD600A25C19 /* CharacterSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSet.swift; sourceTree = "<group>"; };
 		2FCD419F246D753200A25C19 /* HistoryDetialsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetialsViewController.swift; sourceTree = "<group>"; };
+		2FCD41A1246E7F0000A25C19 /* ProfileStoryVideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStoryVideoCell.swift; sourceTree = "<group>"; };
+		2FCD41A5246EACCD00A25C19 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video.mp4; path = ../../../source/video.mp4; sourceTree = "<group>"; };
 		2FD8DF8D24231C1F004C5A92 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		2FD8DF8F242B1F39004C5A92 /* ArchiveWatchTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveWatchTextViewController.swift; sourceTree = "<group>"; };
 		2FD8DF93242B1F6A004C5A92 /* ArchiveWatchVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveWatchVideoViewController.swift; sourceTree = "<group>"; };
@@ -515,6 +519,7 @@
 				2FB2E4BD23FD5A7500E15A81 /* Photo Album */,
 				2F2C3BEC23E089CD0025A390 /* Info.plist */,
 				2FCD418F246A8DEF00A25C19 /* app-icon.png */,
+				2FCD41A5246EACCD00A25C19 /* video.mp4 */,
 				2F2C3BE423E089CC0025A390 /* Login.storyboard */,
 				2FFA5147240FAA0C0032396D /* Region.storyboard */,
 				2FD8DFDF243EE36A004C5A92 /* Signup.storyboard */,
@@ -818,6 +823,7 @@
 				2FE6E92B2401A26800294B51 /* SettingReportViewController.swift */,
 				2FADB18424001C9E007D29E5 /* FollowerTableViewController.swift */,
 				2FB2E4A523FC42D700E15A81 /* SettingAccountPrivacyViewController.swift */,
+				2FCD41A1246E7F0000A25C19 /* ProfileStoryVideoCell.swift */,
 				2FADB18624001CD1007D29E5 /* FollowerTableViewCell.swift */,
 				2FE6E93624022F9D00294B51 /* SettingTouchIDViewController.swift */,
 				2FADB18C240115C6007D29E5 /* SettingActivityTableViewController.swift */,
@@ -1019,6 +1025,7 @@
 				2FD8DF97242C6A96004C5A92 /* AudioRecorderViewController.xib in Resources */,
 				2FF8F91D240279500085FFE8 /* Assets.xcassets in Resources */,
 				2FD8DFB8243865B9004C5A92 /* Passcode.storyboard in Resources */,
+				2FCD41A6246EACCD00A25C19 /* video.mp4 in Resources */,
 				2FD8DFE0243EE36B004C5A92 /* Signup.storyboard in Resources */,
 				2FADB12923FFA92F007D29E5 /* YPVideoFiltersVC.xib in Resources */,
 			);
@@ -1187,6 +1194,7 @@
 				2FADB15923FFA92F007D29E5 /* YPCameraView.swift in Sources */,
 				2FE6E92A24018AF600294B51 /* SettingLoginActivityCell.swift in Sources */,
 				2FB2E48F23FA79CE00E15A81 /* TabViewController.swift in Sources */,
+				2FCD41A2246E7F0000A25C19 /* ProfileStoryVideoCell.swift in Sources */,
 				2F8E0119240D37D900A13810 /* LocationHomeTableViewCell.swift in Sources */,
 				2FB2E4C823FD68CD00E15A81 /* AlbumPhoto.swift in Sources */,
 				2FE6E92824015FB700294B51 /* LocationViewController.swift in Sources */,
@@ -1436,6 +1444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 57Q57V83WR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos/PryntTrimmerView",
@@ -1461,6 +1470,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 57Q57V83WR;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Release-iphoneos/PryntTrimmerView",

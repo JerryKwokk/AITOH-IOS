@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SettingActivityTableViewController: UIViewController {
     var deviceList:[Device] = []
@@ -57,6 +58,31 @@ extension SettingActivityTableViewController:UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = UIAlertController(title: "", message: "Device", preferredStyle: .actionSheet)
+        let names = ["Logout"]
+        for name in names {
+            let action = UIAlertAction(title: name, style: .destructive) { (action) in
+                let curDevice = self.deviceList[indexPath.row].name
+                if curDevice == UIDevice.modelName {
+                    let vc = self.storyboard!.instantiateViewController(identifier: "LoginViewController") as!LoginViewController
+                    UserDefaults.standard.removeObject(forKey: "userId")
+                    UserDefaults.standard.removeObject(forKey: "username")
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                    //self.dismiss(animated: true, completion: nil)
+                }else{
+                    
+                }
+                
+           }
+           controller.addAction(action)
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        controller.addAction(cancelAction)
+        present(controller, animated: true, completion: nil)
     }
     
 }

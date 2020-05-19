@@ -62,6 +62,8 @@ class PasscodeViewController: UIViewController,PasswordInputCompleteProtocol {
         passwordContainerView.delegate = self
         passwordContainerView.tintColor = .black // brown
         passwordContainerView.highlightedColor = .black // brown
+        passwordContainerView.touchAuthenticationEnabled = true
+        passwordContainerView.touchAuthentication()
         self.view.addSubview(passwordContainerView)
         lblMessage.text = "Enter the passcode"
         

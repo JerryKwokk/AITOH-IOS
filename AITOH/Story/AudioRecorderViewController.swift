@@ -176,7 +176,8 @@ class AudioRecorderViewController: UINavigationController {
             print("save")
             print(outputURL)
             audioRecorderDelegate?.audioRecorderViewControllerDismissed(withFileURL: outputURL)
-            UserDefaults.standard.set(outputURL, forKey: "audio")
+            //UserDefaults.standard.set(outputURL, forKey: "audio")
+            self.dismiss(animated: true, completion: nil)
         }
         
         @IBAction func toggleRecord(_ sender: Any) {

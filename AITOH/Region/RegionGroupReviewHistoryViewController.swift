@@ -30,7 +30,7 @@ class RegionGroupReviewHistoryViewController: UIViewController {
     
     func createArray() -> [Location]{
         let loca1 = Location(id: 1, place: "Hong Kong", lat: 0.0, long: 0.0)
-        let loca2 = Location(id: 2, place: "HKDI", lat: 0.0, long: 0.0)
+        let loca2 = Location(id: 2, place: "METRO", lat: 0.0, long: 0.0)
         return [loca1, loca2]
     }
     

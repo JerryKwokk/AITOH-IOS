@@ -34,7 +34,8 @@ class RecntlyViewedListViewController: UIViewController {
                 let recentView = RecentView(json: recentViewJson)
                 self.recentViewList.append(recentView)
              }
-             
+             let recent = RecentView(id: -1, historyId: 1, iconImagePath: "https://aitohbucket.s3.amazonaws.com/tonyliu.jpg", content: "This is Region History", date: "Today")
+             self.recentViewList.insert(recent, at: 0)
              print(self.recentViewList.count)
              print(json)
                  self.tableView.reloadData()

@@ -23,4 +23,11 @@ struct RecentView {
         date = json["create_date"].stringValue
         print(String(id) + String(historyId) + iconImagePath + content + date)
     }
+    init(id:Int, historyId: Int, iconImagePath:String, content:String, date:String){
+        self.id = id
+        self.historyId = historyId
+        self.iconImagePath = iconImagePath
+        self.content = content
+        self.date = date
+    }
 }
